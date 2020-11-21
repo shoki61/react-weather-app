@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 
-class Home extends Component{
+
+import './Forecast.css';
+
+class Forecast extends Component{
     render(){
         return(
             <div>
-                <div>input</div>
+
             </div>
         );
     };
 };
 
-export default Home;
+export default Forecast;
