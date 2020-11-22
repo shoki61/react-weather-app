@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 
-
 import Logo from '../../components/Logo/Logo';
-
+import SwitchLabels from "../../components/Buttons/SwitchButton/SwitchButton";
 import './Header.css';
 
 
@@ -17,7 +16,7 @@ class Header extends Component{
                     <i className="fab fa-github"> </i>
                 </a>
 
-                <div>Mode button</div>
+                <SwitchLabels/>
             </div>
         );
     };
