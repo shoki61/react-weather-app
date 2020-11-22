@@ -6,9 +6,11 @@ import './Header.css';
 class Header extends Component{
     render(){
         return(
-            <div>
+            <div className='Header'>
                 <div>App name</div>
-                <div>Github link</div>
+                <a href='https://github.com/shoki61/react-weather-app' target='_blank'>
+                    <i className="fab fa-github"> </i>
+                </a>
                 <div>Mode button</div>
             </div>
         );
