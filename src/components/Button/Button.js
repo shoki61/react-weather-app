@@ -3,9 +3,7 @@ import React from 'react';
 import './Button.css';
 
 const button = props => (
-    <button
-        onClick={props.clicked}
-    >
+    <button onClick={props.clicked}>
         { props.children }
     </button>
 );

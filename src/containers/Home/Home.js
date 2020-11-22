@@ -5,6 +5,7 @@ class Home extends Component{
         return(
             <div>
                 <div>input</div>
+                <div>weather list</div>
             </div>
         );
     };

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 
 import Home from './containers/Home/Home';
+import Header from './containers/Header/Header';
 
 import './App.css';
 
@@ -10,10 +11,9 @@ class App extends Component{
   render(){
     return (
         <div className="App">
-            <div>Header</div>
+            <Header/>
             <div>Home</div>
-            <div>Current Weather</div>
-            <div>FiveDay Forecast</div>
+            <div>Weather</div>
         </div>
     );
   };

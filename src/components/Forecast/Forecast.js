@@ -7,7 +7,7 @@ class Forecast extends Component{
     render(){
         return(
             <div>
-
+                <div>Forecast</div>
             </div>
         );
     };
