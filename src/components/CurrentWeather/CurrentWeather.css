@@ -1,6 +1,6 @@
-.Current-Weather{
-    width: 500px;
-    height: 300px;
-    background-color: rgba(0,0,0,0.5);
+.Current-Weather-Card{
+    width: 425px;
+    height: 275px;
+    background-color: rgba(0,0,0,.25);
     border-radius: 15px;
 }

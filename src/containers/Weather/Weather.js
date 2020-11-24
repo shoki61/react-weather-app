@@ -7,6 +7,7 @@ import Input from '../../components/Input/Input';
 import Button from '../../components/Buttons/Button/Button';
 
 class Weather extends Component{
+
     render(){
         return(
             <div className='Weather'>
