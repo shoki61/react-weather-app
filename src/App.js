@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 
 
 import Home from './containers/Home/Home';
 import Header from './containers/Header/Header';
-
+import Weather from './containers/Weather/Weather';
 import './App.css';
 
 
@@ -12,7 +13,8 @@ class App extends Component{
     return (
         <div className="App">
             <Header/>
-            <Home/>
+            <Route path='/' exact component={Home}/>
+            <Route path='/weather' component={Weather}/>
         </div>
     );
   };

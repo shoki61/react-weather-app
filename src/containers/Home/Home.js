@@ -7,6 +7,9 @@ import Button from '../../components/Buttons/Button/Button';
 
 
 class Home extends Component{
+
+    
+
     render(){
         return(
             <div className='Home'>
