@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { FaRegStar, FaStar } from 'react-icons/fa'
+
 
 
 import './CurrentWeather.css';
+import Button from '../Buttons/Button/Button';
 
 import img from '../../assets/icons/11n.png';
 
@@ -24,6 +27,10 @@ class CurrentWeather extends Component{
                         <p>Clouds:</p>
                     </div>
                 </div>
+                <Button btnType='Add'>
+                    {/*<FaRegStar/>*/}
+                    <FaStar/>
+                </Button>
             </div>
         );
     };
