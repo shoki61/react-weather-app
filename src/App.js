@@ -12,8 +12,7 @@ class App extends Component{
     return (
         <div className="App">
             <Header/>
-            <div>Home</div>
-            <div>Weather</div>
+            <Home/>
         </div>
     );
   };

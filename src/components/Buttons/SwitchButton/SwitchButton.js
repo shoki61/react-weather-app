@@ -5,8 +5,8 @@ import Switch from '@material-ui/core/Switch';
 
 const  SwitchLabels = () => {
     const [state, setState] = React.useState({
-        checkedA: true,
-        checkedB: true,
+        checkedA: false,
+        checkedB: false,
     });
 
     const handleChange = (event) => {

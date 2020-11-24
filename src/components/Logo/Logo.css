@@ -19,7 +19,8 @@ img {
     font-size: 18px;
     color: #505050;
     font-weight: 600;
-    font-family: 'Acme'
+    font-family: 'Acme';
+    letter-spacing: 1px;
 }
 
 .App-Type {
