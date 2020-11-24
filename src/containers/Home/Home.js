@@ -8,7 +8,10 @@ import Button from '../../components/Buttons/Button/Button';
 
 class Home extends Component{
 
-    
+    getWeatherHandler = () => {
+        //...
+        this.props.history.push('/weather');
+    };
 
     render(){
         return(
@@ -17,6 +20,7 @@ class Home extends Component{
                     placeholder='Search location'
                 />
                 <Button
+                    clicked={this.getWeatherHandler}
                     btnType='Search'
                 >
                     <BsSearch/>
