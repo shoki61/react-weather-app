@@ -5,6 +5,7 @@ import CurrentWeather from '../../components/CurrentWeather/CurrentWeather';
 import Forecast from '../../components/Forecast/Forecast';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Buttons/Button/Button';
+import Favorites from '../../components/Favorites/Favorites';
 
 class Weather extends Component{
 
@@ -12,9 +13,11 @@ class Weather extends Component{
         return(
             <div className='Weather'>
                 <div className='Weather-Left-Layout'>
-                    <Input/>
+                    <Input placeholder='Search city'/>
                     <CurrentWeather/>
-                    <div>Favory</div>
+                    <Favorites/>
+                    <Favorites/>
+
                 </div>
                 <div className='Weather-Right-Layout'>
                     <div>Forecast</div>
