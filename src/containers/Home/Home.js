@@ -10,7 +10,9 @@ class Home extends Component{
     render(){
         return(
             <div className='Home'>
-                <Input/>
+                <Input
+                    placeholder='Search location'
+                />
                 <Button/>
             </div>
         );

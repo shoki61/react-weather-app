@@ -7,3 +7,12 @@
     align-items: center;
     justify-content: center;
 }
+
+::placeholder{
+    color:#fff;
+    transition: all .3s ease-in-out;
+}
+
+.Input:focus::placeholder{
+    color: transparent;
+}
