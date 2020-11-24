@@ -16,15 +16,20 @@ class Home extends Component{
     render(){
         return(
             <div className='Home'>
-                <Input
-                    placeholder='Search location'
-                />
-                <Button
-                    clicked={this.getWeatherHandler}
-                    btnType='Search'
-                >
-                    <BsSearch/>
-                </Button>
+                <div style={{marginBottom:75}}>
+                    <h1 className='Title'>Weather is Life</h1>
+                    <div className='Search-Input'>
+                        <Input
+                            placeholder='Search location'
+                        />
+                        <Button
+                            clicked={this.getWeatherHandler}
+                            btnType='Search'
+                        >
+                            <BsSearch/>
+                        </Button>
+                    </div>
+                </div>
             </div>
         );
     };
