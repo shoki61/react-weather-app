@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { BsSearch } from 'react-icons/bs';
 
 import './Home.css';
 import Input from '../../components/Input/Input';
@@ -13,7 +13,9 @@ class Home extends Component{
                 <Input
                     placeholder='Search location'
                 />
-                <Button/>
+                <Button>
+                    <BsSearch/>
+                </Button>
             </div>
         );
     };
