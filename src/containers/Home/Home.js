@@ -13,7 +13,9 @@ class Home extends Component{
                 <Input
                     placeholder='Search location'
                 />
-                <Button>
+                <Button
+                    btnType='Search'
+                >
                     <BsSearch/>
                 </Button>
             </div>
