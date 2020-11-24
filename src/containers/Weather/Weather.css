@@ -1,8 +1,27 @@
 .Weather {
+    background: url("../../assets/darkModeImg.jpg") no-repeat center center;
+    background-size: cover;
     height: 100vh;
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #1c0e24;
+}
+
+.Weather-Left-Layout {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Weather-Right-Layout {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }

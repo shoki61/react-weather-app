@@ -6,8 +6,7 @@ import './CurrentWeather.css';
 class CurrentWeather extends Component{
     render(){
         return(
-            <div>
-                <div>input</div>
+            <div className='Current-Weather'>
                 <div>current Weather</div>
             </div>
         );
