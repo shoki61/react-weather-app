@@ -15,6 +15,7 @@ class Weather extends Component{
                 <div className='Weather-Left-Layout'>
                     <Input placeholder='Search city'/>
                     <CurrentWeather/>
+                    <span>Favorite locations</span>
                     <Favorites/>
                     <Favorites/>
 

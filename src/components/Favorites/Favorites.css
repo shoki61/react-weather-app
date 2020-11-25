@@ -10,6 +10,7 @@
     padding:0 20px;
     margin-bottom: 10px;
     cursor: pointer;
+    position: relative;
 }
 
 .Favorites-Card:hover{
@@ -36,3 +37,13 @@
     color:seashell;
     font-size: 20px;
 }
+
+.Favorites-Card button{
+    visibility: hidden;
+}
+
+.Favorites-Card:hover button{
+    visibility: visible;
+}
+
+

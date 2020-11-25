@@ -17,8 +17,13 @@
 }
 
 .Remove {
-
+    position: absolute;
+    left:-30px;
+    font-size: 25px;
+    background-color: transparent;
+    color: #ff2f2f
 }
+
 
 .Add {
     width: 30px;
