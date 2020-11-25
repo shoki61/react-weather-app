@@ -25,6 +25,7 @@
     color: seashell;
     font-size: 15px;
     margin:0;
+    font-family: 'Tauri', sans-serif;
 }
 
 .Hourly-Forecast {
@@ -55,5 +56,6 @@
     color:seashell;
     margin:4px;
     font-size: 15px;
+    font-family: 'Tauri', sans-serif;
 }
 

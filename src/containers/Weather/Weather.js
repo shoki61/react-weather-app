@@ -9,6 +9,8 @@ import Favorites from '../../components/Favorites/Favorites';
 
 class Weather extends Component{
 
+
+
     render(){
         return(
             <div className='Weather'>
