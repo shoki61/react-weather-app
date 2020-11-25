@@ -6,6 +6,7 @@ import './Forecast.css';
 
 const forecast = props => (
     <div>
+        <h2 className='Location-Name'>Trabzon/Tr</h2>
         <TabNavigator/>
         <HourlyCard/>
         <HourlyCard/>
