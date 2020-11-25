@@ -1,7 +1,8 @@
 .Tabs{
-    background-color: rgba(0,0,0,.3);
-    padding: 0;
+    background-color: rgba(0,0,0,.4);
+    border-radius: 7px;
 }
-.Tabs button{
-    padding:0
+
+.tab{
+    color:blue
 }

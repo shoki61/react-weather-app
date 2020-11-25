@@ -13,20 +13,21 @@ import './TabNavigator.css';
 const useStyles = makeStyles({
     root: {
         flexGrow: 1,
-        width:500,
-        maxWidth: '100%',
-        backgroundColor:'transparent'
+        width:600,
+        backgroundColor:'transparent',
+        boxShadow:'none'
     },
-    label: {
-        fontSize:13,
-        textTransform:'capitalize',
-        color:'#aeaeae'
+    tab:{
+        color:'#787878'
+    },
+    tabActive:{
+        color:'#00a2ff'
     }
 });
 
 
 
-export default function IconLabelTabs() {
+const IconLabelTabs = props => {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
 
@@ -40,14 +41,28 @@ export default function IconLabelTabs() {
                 value={value}
                 onChange={handleChange}
                 variant="fullWidth"
-                indicatorColor="secondary"
-                textColor="secondary"
+                indicatorColor="primary"
+                textColor="inherit"
                 aria-label="icon label tabs example"
                 className='Tabs'
             >
-                <Tab className={classes.label} icon={<ScheduleOutlinedIcon/>} label="Hourly" />
-                <Tab className={classes.label} icon={<CalendarTodayOutlinedIcon/>} label="Weekly" />
+                <Tab
+                    classes={{
+                        selected:classes.tabActive,
+                        textColorInherit:classes.tab
+                    }}
+                    icon={<ScheduleOutlinedIcon/>}
+                />
+                <Tab
+                    classes={{
+                        selected:classes.tabActive,
+                        textColorInherit:classes.tab
+                    }}
+                    icon={<CalendarTodayOutlinedIcon/>}
+                />
             </Tabs>
         </Paper>
     );
-}
+};
+
+export default IconLabelTabs;
