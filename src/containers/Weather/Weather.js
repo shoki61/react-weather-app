@@ -21,7 +21,7 @@ class Weather extends Component{
 
                 </div>
                 <div className='Weather-Right-Layout'>
-                    <div>Forecast</div>
+                    <Forecast/>
                 </div>
             </div>
         )
