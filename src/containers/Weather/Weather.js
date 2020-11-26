@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import ErrorIcon from '@material-ui/icons/ErrorOutline';
+
 
 import './Weather.css';
 import CurrentWeather from '../../components/CurrentWeather/CurrentWeather';
@@ -26,7 +28,7 @@ class Weather extends Component{
                 <div className='Weather-Right-Layout'>
                     <Forecast/>
                 </div>
-                <Modal/>
+
             </div>
         )
     };

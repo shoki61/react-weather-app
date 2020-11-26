@@ -37,4 +37,12 @@
     color:#fff
 }
 
+.Error {
+    font-size: 15px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #ff0062;
+    color:#fff
+}
+
 
