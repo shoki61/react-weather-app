@@ -8,10 +8,19 @@ import Button from '../../components/Buttons/Button/Button';
 
 class Home extends Component{
 
+    state = {
+        locationName:''
+    }
+
+
     getWeatherHandler = () => {
         //...
         this.props.history.push('/weather');
     };
+
+    inputChangedHandler = event => {
+        this.setState({locationName: event.target.value})
+    }
 
     render(){
         return(
@@ -21,6 +30,8 @@ class Home extends Component{
                     <div className='Search-Input'>
                         <Input
                             placeholder='Search location'
+                            value={this.state.locationName}
+                            changed={event => this.inputChangedHandler(event)}
                         />
                         <Button
                             clicked={this.getWeatherHandler}
