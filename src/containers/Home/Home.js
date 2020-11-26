@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import './Home.css';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Buttons/Button/Button';
-import { fetchWeather } from '../../store/actions/index';
+import * as action from '../../store/actions/index';
 
 
 class Home extends Component{
@@ -16,7 +16,7 @@ class Home extends Component{
 
     getWeatherHandler = () => {
         //...
-        this.props.onSubmit(this.state.locationName);
+        this.props.onSubmitLocation(this.state.locationName);
         this.props.history.push('/weather');
     };
 
@@ -50,7 +50,7 @@ class Home extends Component{
 
 const mapDispatchToProps = dispatch => {
     return{
-        onSubmit: (location) => dispatch(fetchWeather(location))
+        onSubmitLocation: (location) => dispatch(action.fetchWeather(location))
     };
 };
 

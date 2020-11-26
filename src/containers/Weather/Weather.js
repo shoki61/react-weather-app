@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ErrorIcon from '@material-ui/icons/ErrorOutline';
+import { connect } from 'react-redux';
 
 import './Weather.css';
 import CurrentWeather from '../../components/CurrentWeather/CurrentWeather';
@@ -17,7 +17,7 @@ class Weather extends Component{
                 <div className='Weather-Left-Layout'>
                     <Input placeholder='Search city'/>
                     <CurrentWeather/>
-                    <span>Favorite locations</span>
+                    <span>Favorite locations <strong>{this.props.name}</strong></span>
                     <Favorites/>
                     <Favorites/>
 
@@ -31,5 +31,10 @@ class Weather extends Component{
     };
 };
 
+const mapStateToProps = state => {
+    return{
+        name: state.location
+    };
+};
 
-export default Weather;
+export default connect(mapStateToProps)(Weather);
