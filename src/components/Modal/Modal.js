@@ -5,12 +5,13 @@ import Button from '../Buttons/Button/Button';
 
 const modal = props => (
     <div className='Modal'>
-        <div>
+        <div className='Modal-Content'>
             {props.children}
-        </div>
-        <Button>
 
-        </Button>
+            <Button>
+
+            </Button>
+        </div>
     </div>
 );
 
