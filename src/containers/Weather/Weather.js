@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ErrorIcon from '@material-ui/icons/ErrorOutline';
 
-
 import './Weather.css';
 import CurrentWeather from '../../components/CurrentWeather/CurrentWeather';
 import Forecast from '../../components/Forecast/Forecast';
@@ -11,8 +10,6 @@ import Favorites from '../../components/Favorites/Favorites';
 import Modal from '../../components/Modal/Modal';
 
 class Weather extends Component{
-
-
 
     render(){
         return(
@@ -33,5 +30,6 @@ class Weather extends Component{
         )
     };
 };
+
 
 export default Weather;
