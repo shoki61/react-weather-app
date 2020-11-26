@@ -6,6 +6,7 @@ import Forecast from '../../components/Forecast/Forecast';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Buttons/Button/Button';
 import Favorites from '../../components/Favorites/Favorites';
+import Modal from '../../components/Modal/Modal';
 
 class Weather extends Component{
 
@@ -25,6 +26,7 @@ class Weather extends Component{
                 <div className='Weather-Right-Layout'>
                     <Forecast/>
                 </div>
+                <Modal/>
             </div>
         )
     };
