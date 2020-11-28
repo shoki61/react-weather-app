@@ -9,7 +9,7 @@ import Favorites from '../../components/Favorites/Favorites';
 
 class Weather extends Component{
 
-    componentDidMount() {
+    componentWillMount() {
         console.log(this.props.current)
     }
 

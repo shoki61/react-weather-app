@@ -1,5 +1,6 @@
 import * as actionTypes from './actionTypes';
 import axios from '../../axios-weather';
+import {api} from '../../APIKEY';
 
 
 export const fetchWeatherStart = (location) => {
@@ -26,7 +27,7 @@ export const fetchWeatherFail = (error) => {
 export const fetchWeather = location => {
     return dispatch => {
         dispatch(fetchWeatherStart(location));
-        axios.get('/onecall?lat=40.9861&lon=37.8797&appid=65d6a7fd3ce6b78c501c67c41ae3e9b8')
+        axios.get(`/onecall?lat=40.9861&lon=37.8797&appid=${api}`)
             .then(response => {
                 //console.log(response.data.current)
                 dispatch(fetchWeatherSuccess(response.data));
