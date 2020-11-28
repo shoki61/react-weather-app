@@ -26,20 +26,14 @@ const useStyles = makeStyles({
 });
 
 
-
 const IconLabelTabs = props => {
     const classes = useStyles();
-    const [value, setValue] = React.useState(0);
-
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
 
     return (
         <Paper square className={classes.root}>
             <Tabs
-                value={value}
-                onChange={handleChange}
+                value={props.value}
+                onChange={props.changed}
                 variant="fullWidth"
                 indicatorColor="primary"
                 textColor="inherit"

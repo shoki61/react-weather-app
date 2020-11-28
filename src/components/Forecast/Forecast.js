@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import TabNavigator from '../TabNavigator/TabNavigator';
 import HourlyCard from './ForecastCards/HourlyCard/HourlyCard';
@@ -6,12 +6,18 @@ import WeeklyCard from './ForecastCards/WeeklyCard/WeeklyCard';
 import Spinner from '../Spinner/Spinner';
 import './Forecast.css';
 
-const forecast = props => (
-    <div>
-        <h2 className='Location-Name'>{props.locationName}</h2>
-        <TabNavigator/>
-        {props.hourlyData
-            ? props.hourlyData.map(item => (
+const Forecast = props => {
+
+    const [value, setValue] = useState(0);
+
+    const tabNavigatorHandler = value => {
+        setValue(value);
+    };
+
+    let hourlyData = <Spinner/>
+    if(props.hourlyData){
+        hourlyData = (
+            props.hourlyData.map(item => (
                 <HourlyCard
                     id={item.dt}
                     time={item.dt}
@@ -23,12 +29,25 @@ const forecast = props => (
                     weather={item.weather}
                 />
             ))
-            : <Spinner/>
-        }
-        <WeeklyCard
-            weeklyData={props.weeklyData}
-        />
-    </div>
-);
+        );
+    };
 
-export default forecast;
+    return(
+        <div>
+            <h2 className='Location-Name'>{props.locationName}</h2>
+            <TabNavigator
+                changed={(_,value)=>tabNavigatorHandler(value)}
+                value={value}
+            />
+            {value === 0
+                ? hourlyData
+                : <WeeklyCard
+                    weeklyData={props.weeklyData}
+                />
+            }
+
+        </div>
+    )
+};
+
+export default Forecast;
