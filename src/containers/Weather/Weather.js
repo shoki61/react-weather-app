@@ -17,10 +17,9 @@ class Weather extends Component{
                 <div className='Weather-Left-Layout'>
                     <Input placeholder='Search city'/>
                     <CurrentWeather/>
-                    <span>Favorite locations <strong>{this.props.name}</strong></span>
+                    <span>Favorite locations</span>
                     <Favorites/>
                     <Favorites/>
-
                 </div>
                 <div className='Weather-Right-Layout'>
                     <Forecast/>
@@ -33,7 +32,8 @@ class Weather extends Component{
 
 const mapStateToProps = state => {
     return{
-        name: state.location
+        name: state.location,
+        current: state.currentWeather
     };
 };
 

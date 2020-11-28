@@ -26,9 +26,9 @@ export const fetchWeatherFail = (error) => {
 export const fetchWeather = location => {
     return dispatch => {
         dispatch(fetchWeatherStart(location));
-        axios.get('/onecall?lat=33.441792&lon=-94.037689&appid=65d6a7fd3ce6b78c501c67c41ae3e9b8')
+        axios.get('/onecall?lat=40.9861&lon=37.8797&appid=65d6a7fd3ce6b78c501c67c41ae3e9b8')
             .then(response => {
-                console.log(response)
+                //console.log(response.data.current)
                 dispatch(fetchWeatherSuccess(response.data));
             })
             .catch(error => {
