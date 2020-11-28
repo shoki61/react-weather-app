@@ -10,7 +10,7 @@ import img from '../../assets/icons/11n.png';
 
 const currentWeather = props =>  (
     <div className='Current-Weather-Card'>
-        <p className='City-Name'>Trabzon / TR</p>
+        <p className='City-Name'>{props.locationName}</p>
         <div className='Weather-Status'>
             <img src={img} alt='img'/>
             <p className='Temp'>25°C</p>

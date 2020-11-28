@@ -5,24 +5,33 @@ import './Weather.css';
 import CurrentWeather from '../../components/CurrentWeather/CurrentWeather';
 import Forecast from '../../components/Forecast/Forecast';
 import Input from '../../components/Input/Input';
-import Button from '../../components/Buttons/Button/Button';
 import Favorites from '../../components/Favorites/Favorites';
-import Modal from '../../components/Modal/Modal';
 
 class Weather extends Component{
+
+    componentDidMount() {
+        console.log(this.props.current)
+    }
 
     render(){
         return(
             <div className='Weather'>
                 <div className='Weather-Left-Layout'>
                     <Input placeholder='Search city'/>
-                    <CurrentWeather/>
+                    <CurrentWeather
+                        currentData={this.props.current}
+                        locationName={this.props.location}
+                    />
                     <span>Favorite locations</span>
                     <Favorites/>
                     <Favorites/>
                 </div>
                 <div className='Weather-Right-Layout'>
-                    <Forecast/>
+                    <Forecast
+                        hourlyData={this.props.hourly}
+                        weeklyData={this.props.weekly}
+                        locationName={this.props.location}
+                    />
                 </div>
 
             </div>
@@ -32,8 +41,10 @@ class Weather extends Component{
 
 const mapStateToProps = state => {
     return{
-        name: state.location,
-        current: state.currentWeather
+        current: state.currentWeather,
+        hourly: state.hourlyForecast,
+        weekly: state.weeklyForecast,
+        location: state.location
     };
 };
 
