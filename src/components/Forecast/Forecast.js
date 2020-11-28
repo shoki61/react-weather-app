@@ -9,7 +9,21 @@ const forecast = props => (
     <div>
         <h2 className='Location-Name'>Trabzon/Tr</h2>
         <TabNavigator/>
-        <WeeklyCard/>
+        {props.hourlyData.map(item => (
+            <HourlyCard
+                id={item.dt}
+                time={item.dt}
+                temp={item.temp}
+                pressure={item.pressure}
+                humidity={item.humidity}
+                clouds={item.clouds}
+                wind={item.wind_speed}
+                weather={item.weather}
+            />
+        ))}
+        <WeeklyCard
+            weeklyData={props.weeklyData}
+        />
     </div>
 );
 
