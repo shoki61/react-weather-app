@@ -12,12 +12,16 @@ import img from '../../assets/icons/11n.png';
 const currentWeather = props => {
     const temp = Math.round(props.currentData.temp - 273.15);
     const windSpeed = Math.round(props.currentData.wind_speed * 3.6);
+    const time = new Date(props.currentData.dt * 1000).toLocaleTimeString().slice(0, -3);
     return (
         <div className='Current-Weather-Card'>
             {props.currentData
                 ? <div>
                     <p className='City-Name'>{props.locationName}</p>
                     <div className='Weather-Status'>
+                        <div className='Time'>
+                            <p>{time}</p>
+                        </div>
                         <img src={img} alt='icon'/>
                         <p className='Temp'>{temp}°C</p>
                     </div>
