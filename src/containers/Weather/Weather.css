@@ -1,11 +1,12 @@
 .Weather {
-    background: url("../../assets/darkModeImg.jpg") no-repeat center center;
+    background: url("../../assets/darkModeImg.jpg") no-repeat center;
     background-size: cover;
     height: 100vh;
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: fixed;
 }
 
 .Weather-Left-Layout {
@@ -15,6 +16,19 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.Weather-Right-Layout {
+    width: 50%;
+    height: 100%;
+    padding:100px 0 50px 0;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    box-sizing: border-box;
 }
 
 .Weather-Left-Layout span {
@@ -24,13 +38,11 @@
     letter-spacing: 1px;
 }
 
-.Weather-Right-Layout {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+.Weather-Right-Layout::-webkit-scrollbar {
+    display: none;
 }
 
 
+.Weather-Left-Layout::-webkit-scrollbar {
+    display: none;
+}

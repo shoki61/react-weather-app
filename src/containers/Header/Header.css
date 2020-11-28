@@ -9,6 +9,7 @@
     padding: 0 25px;
     box-shadow: 0 1px 1px 0 #131328;
     position: fixed;
+    z-index: 100;
 }
 a {
     text-decoration: none;
