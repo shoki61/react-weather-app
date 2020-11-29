@@ -32,7 +32,7 @@ const currentWeather = props => {
                             <p>Clouds: %{props.currentData.clouds}</p>
                         </div>
                     </div>
-                    <Button btnType='Add'>
+                    <Button clicked={props.clicked} btnType='Add'>
                         <FaRegStar/>
                         {/*<FaStar/>*/}
                     </Button>
