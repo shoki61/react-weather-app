@@ -14,7 +14,7 @@ const Forecast = props => {
         setValue(value);
     };
 
-    let hourlyData = <Spinner/>
+    let hourlyData = <Spinner/>;
     if(props.hourlyData){
         hourlyData = (
             props.hourlyData.map(item => (
@@ -32,6 +32,25 @@ const Forecast = props => {
         );
     };
 
+    let weeklyData = <Spinner/>;
+    if(props.weeklyData){
+        weeklyData = (
+            props.weeklyData.map(item => (
+                <WeeklyCard
+                    id={item.dt}
+                    date={item.dt}
+                    temp={item.temp}
+                    pressure={item.pressure}
+                    humidity={item.humidity}
+                    clouds={item.clouds}
+                    wind={item.wind_speed}
+                    weather={item.weather}
+                />
+            ))
+        )
+    }
+
+
     return(
         <div>
             <h2 className='Location-Name'>{props.locationName}</h2>
@@ -41,9 +60,7 @@ const Forecast = props => {
             />
             {value === 0
                 ? hourlyData
-                : <WeeklyCard
-                    weeklyData={props.weeklyData}
-                />
+                : weeklyData
             }
 
         </div>
