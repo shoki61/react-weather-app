@@ -2,15 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import {createStore, applyMiddleware,compose} from 'redux';
+import {createStore, applyMiddleware, combineReducers} from 'redux';
 import thunk from 'redux-thunk';
 
-import reducer from './store/reducers/weather';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const store = createStore(reducer, applyMiddleware(thunk));
+import weatherReducer from './store/reducers/weather';
+import favoritesReducer from './store/reducers/favorites';
+
+const rootReducer = combineReducers({
+    weather:weatherReducer,
+    favorites:favoritesReducer
+});
+
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
         <React.StrictMode>
