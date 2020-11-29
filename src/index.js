@@ -14,7 +14,7 @@ import favoritesReducer from './store/reducers/favorites';
 
 const rootReducer = combineReducers({
     weather:weatherReducer,
-    favorites:favoritesReducer
+    favLocations:favoritesReducer
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));

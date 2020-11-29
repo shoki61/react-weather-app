@@ -12,7 +12,7 @@ const favorites = props => (
         <Button btnType='Remove'>
             <IoMdRemoveCircleOutline/>
         </Button>
-        <p className='City'>Ordu</p>
+        <p className='City'>{props.locationName}</p>
         <div style={{display:'flex', alignItems:'center'}}>
             <img src={img} alt='img'/>
             <p className='Temperature'>25°C</p>
