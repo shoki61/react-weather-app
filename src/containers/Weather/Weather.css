@@ -14,11 +14,12 @@
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
+    box-sizing: border-box;
+    padding: 150px 0 50px 0;
     overflow: scroll;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .Weather-Right-Layout {

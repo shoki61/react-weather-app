@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {BsSearch} from "react-icons/bs";
 
 import './Weather.css';
 import CurrentWeather from '../../components/CurrentWeather/CurrentWeather';
@@ -7,13 +8,18 @@ import Forecast from '../../components/Forecast/Forecast';
 import Input from '../../components/Input/Input';
 import Favorites from '../../components/Favorites/Favorites';
 import * as actions from '../../store/actions/index';
+import Button from "../../components/Buttons/Button/Button";
 
 class Weather extends Component{
+
+    state = {
+        locationName: ''
+    }
 
     addFavoritesHandler = () => {
         this.props.onAddFavorites({
             location: this.props.location,
-            id: this.props.location
+            id: Math.random()
         });
     };
 
@@ -25,11 +31,33 @@ class Weather extends Component{
         this.props.onRemoveAllFavorites();
     };
 
+    getWeatherHandler = () => {
+        if(this.state.locationName !== ''){
+            this.props.onSubmitLocation(this.state.locationName);
+        };
+    };
+
+    inputChangedHandler = event => {
+        this.setState({locationName: event.target.value});
+    };
+
     render(){
         return(
             <div className='Weather'>
                 <div className='Weather-Left-Layout'>
-                    <Input placeholder='Search city'/>
+                    <div style={{display:'flex'}}>
+                        <Input
+                            value={this.state.locationName}
+                            changed={event => this.inputChangedHandler(event)}
+                            placeholder='Search city'
+                        />
+                        <Button
+                            clicked={this.getWeatherHandler}
+                            btnType='Search'
+                        >
+                            <BsSearch/>
+                        </Button>
+                    </div>
                     <CurrentWeather
                         clicked={this.addFavoritesHandler}
                         currentData={this.props.current}
@@ -71,8 +99,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         onAddFavorites: (location) => dispatch(actions.addFavorites(location)),
-        onRemoveFavorites: () => dispatch(actions.removeFavorites()),
-        onRemoveAllFavorites: dispatch(actions.removeAllFavorites)
+        onRemoveFavorites: (id) => dispatch(actions.removeFavorites(id)),
+        onRemoveAllFavorites: dispatch(actions.removeAllFavorites),
+        onSubmitLocation: (location) => dispatch(actions.fetchWeather(location))
     };
 };
 
