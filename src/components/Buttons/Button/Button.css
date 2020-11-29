@@ -24,6 +24,19 @@
     color: #ff2f2f
 }
 
+.Remove-All {
+    background-color: rgba(255, 55, 55, 0.5);
+    padding:7px 15px;
+    color:seashell;
+    border-radius: 3px;
+    transition: all .3s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.Remove-All:hover{
+    background-color: #ff2f2f;
+}
+
 
 .Add {
     width: 30px;
