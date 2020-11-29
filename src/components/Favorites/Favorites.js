@@ -9,7 +9,7 @@ import img from '../../assets/icons/11n.png';
 
 const favorites = props => (
     <div className='Favorites-Card'>
-        <Button btnType='Remove'>
+        <Button clicked={props.clicked} btnType='Remove'>
             <IoMdRemoveCircleOutline/>
         </Button>
         <p className='City'>{props.locationName}</p>

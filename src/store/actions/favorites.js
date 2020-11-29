@@ -8,10 +8,10 @@ export const addFavorites = (location) => {
     };
 };
 
-export const removeFavorites = (id) => {
+export const removeFavorites = (index) => {
     return {
         type: actionTypes.REMOVE_FAVORITES,
-        id: id
+        index: index
     };
 };
 
