@@ -23,14 +23,9 @@ class Weather extends Component{
         });
     };
 
-    removeFavoritesHandler = (index) => {
-        console.log(index)
-        this.props.onRemoveFavorites(index);
-    };
+    removeFavoritesHandler = (index) => this.props.onRemoveFavorites(index);
 
-    removeAllFavoritesHandler = () => {
-        this.props.onRemoveAllFavorites();
-    };
+    removeAllFavoritesHandler = () => this.props.onRemoveAllFavorites();
 
     getWeatherHandler = () => {
         if(this.state.locationName !== ''){
@@ -38,9 +33,7 @@ class Weather extends Component{
         };
     };
 
-    inputChangedHandler = event => {
-        this.setState({locationName: event.target.value});
-    };
+    inputChangedHandler = event => this.setState({locationName: event.target.value});
 
     render(){
         return(
@@ -64,10 +57,14 @@ class Weather extends Component{
                         currentData={this.props.current}
                         locationName={this.props.location}
                     />
-                    <span>Favorite locations</span>
-                    <Button btnType='Remove-All'>
-                        Remove all
-                    </Button>
+                    { this.props.favorites.length ? <span>Favorite locations</span> : null }
+                    {
+                        this.props.favorites.length >= 2
+                            ? <Button clicked={this.removeAllFavoritesHandler} btnType='Remove-All'>
+                                Remove all
+                              </Button>
+                            : null
+                    }
                     {
                         this.props.favorites.map((item,index) => (
                             <Favorites
@@ -105,7 +102,7 @@ const mapDispatchToProps = dispatch => {
     return {
         onAddFavorites: (location) => dispatch(actions.addFavorites(location)),
         onRemoveFavorites: (index) => dispatch(actions.removeFavorites(index)),
-        onRemoveAllFavorites: dispatch(actions.removeAllFavorites),
+        onRemoveAllFavorites: () => dispatch(actions.removeAllFavorites()),
         onSubmitLocation: (location) => dispatch(actions.fetchWeather(location))
     };
 };
