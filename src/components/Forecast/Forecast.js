@@ -52,7 +52,7 @@ const Forecast = props => {
 
 
     return(
-        <div>
+        <div style={{width:600}}>
             <h2 className='Location-Name'>{props.locationName}</h2>
             <TabNavigator
                 changed={(_,value)=>tabNavigatorHandler(value)}

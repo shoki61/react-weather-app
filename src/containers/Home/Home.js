@@ -12,17 +12,18 @@ class Home extends Component{
 
     state = {
         locationName:''
-    }
+    };
 
     getWeatherHandler = () => {
-        //...
-        this.props.onSubmitLocation(this.state.locationName);
-        this.props.history.push('/weather');
+        if(this.state.locationName !== ''){
+            this.props.onSubmitLocation(this.state.locationName);
+            this.props.history.push('/weather');
+        };
     };
 
     inputChangedHandler = event => {
-        this.setState({locationName: event.target.value})
-    }
+        this.setState({locationName: event.target.value});
+    };
 
     render(){
         return(

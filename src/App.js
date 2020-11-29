@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 
 import Home from './containers/Home/Home';
@@ -9,14 +9,15 @@ import './App.css';
 
 
 class App extends Component{
-  render(){
-    return (
-        <div className="App">
-            <Header/>
-            <Route path='/' exact component={Home}/>
-            <Route path='/weather' component={Weather}/>
-        </div>
-    );
+
+    render(){
+        return (
+            <div className="App">
+                <Header/>
+                <Route path='/' exact component={Home}/>
+                <Route path='/weather' component={Weather}/>
+            </div>
+        );
   };
 };
 
