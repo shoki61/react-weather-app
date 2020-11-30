@@ -19,7 +19,7 @@ const Forecast = props => {
         hourlyData = (
             props.hourlyData.map(item => (
                 <HourlyCard
-                    id={item.dt}
+                    key={item.dt}
                     time={item.dt}
                     temp={item.temp}
                     pressure={item.pressure}
@@ -37,7 +37,7 @@ const Forecast = props => {
         weeklyData = (
             props.weeklyData.map(item => (
                 <WeeklyCard
-                    id={item.dt}
+                    key={item.dt}
                     date={item.dt}
                     temp={item.temp}
                     pressure={item.pressure}

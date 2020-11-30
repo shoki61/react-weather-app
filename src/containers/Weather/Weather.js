@@ -10,26 +10,36 @@ import Favorites from '../../components/Favorites/Favorites';
 import * as actions from '../../store/actions/index';
 import Button from "../../components/Buttons/Button/Button";
 
+
 class Weather extends Component{
 
     state = {
-        locationName: ''
-    }
-
+        locationName: '',
+        isFavorite: false,
+    };
     addFavoritesHandler = () => {
-        this.props.onAddFavorites({
-            location: this.props.location,
-            id: Math.random()
-        });
+        this.props.onAddFavorites(this.props.location);
+        setTimeout(()=>{
+            if (this.props.favorites.includes(this.props.location)) this.setState({isFavorite: true})
+            else this.setState({iFavorite: false})
+        },0);
     };
 
-    removeFavoritesHandler = (index) => this.props.onRemoveFavorites(index);
+    removeFavoritesHandler = (index) => {
+        this.props.onRemoveFavorites(index);
+    };
 
-    removeAllFavoritesHandler = () => this.props.onRemoveAllFavorites();
+    removeAllFavoritesHandler = () => {
+        this.props.onRemoveAllFavorites();
+    };
 
     getWeatherHandler = () => {
         if(this.state.locationName !== ''){
             this.props.onSubmitLocation(this.state.locationName);
+            setTimeout(()=>{
+                if (this.props.favorites.includes(this.props.location)) {this.setState({isFavorite: true})}
+                else this.setState({isFavorite: false});
+            },0);
         };
     };
 
@@ -56,6 +66,7 @@ class Weather extends Component{
                         clicked={this.addFavoritesHandler}
                         currentData={this.props.current}
                         locationName={this.props.location}
+                        isFavorite={this.state.isFavorite}
                     />
                     { this.props.favorites.length ? <span>Favorite locations</span> : null }
                     {
@@ -69,8 +80,8 @@ class Weather extends Component{
                         this.props.favorites.map((item,index) => (
                             <Favorites
                                 clicked={()=> this.removeFavoritesHandler(index)}
-                                key={item.id}
-                                locationName={item.location}
+                                key={item}
+                                locationName={item}
                             />
                         ))
                     }
@@ -82,9 +93,8 @@ class Weather extends Component{
                         locationName={this.props.location}
                     />
                 </div>
-
             </div>
-        )
+        );
     };
 };
 
@@ -94,7 +104,8 @@ const mapStateToProps = state => {
         hourly: state.weather.hourlyForecast,
         weekly: state.weather.weeklyForecast,
         location: state.weather.location,
-        favorites: state.favLocations.favorites
+        favorites: state.favLocations.favorites,
+        isFavorite: state.favLocations.isFavorite
     };
 };
 

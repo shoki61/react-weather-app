@@ -33,8 +33,11 @@ const currentWeather = props => {
                         </div>
                     </div>
                     <Button clicked={props.clicked} btnType='Add'>
-                        <FaRegStar/>
-                        {/*<FaStar/>*/}
+                        {
+                            props.isFavorite
+                                ? <FaStar/>
+                                : <FaRegStar/>
+                        }
                     </Button>
                 </div>
                 : <Spinner/>
