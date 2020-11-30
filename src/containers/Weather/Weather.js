@@ -17,11 +17,19 @@ class Weather extends Component{
         locationName: '',
         isFavorite: false,
     };
+
+    componentDidMount() {
+        setTimeout(()=>{
+            if (this.props.favorites.includes(this.props.location)) this.setState({isFavorite: true});
+            else this.setState({isFavorite: false})
+        },0);
+    }
+
     addFavoritesHandler = () => {
         this.props.onAddFavorites(this.props.location);
         setTimeout(()=>{
-            if (this.props.favorites.includes(this.props.location)) this.setState({isFavorite: true})
-            else this.setState({iFavorite: false})
+            if (this.props.favorites.includes(this.props.location)) this.setState({isFavorite: true});
+            else this.setState({isFavorite: false})
         },0);
     };
 
@@ -31,6 +39,7 @@ class Weather extends Component{
 
     removeAllFavoritesHandler = () => {
         this.props.onRemoveAllFavorites();
+        this.setState({isFavorite: false});
     };
 
     getWeatherHandler = () => {
