@@ -21,6 +21,16 @@ class Home extends Component{
         };
     };
 
+    getWeatherOnKeyPress = (event) => {
+        if( event.keyCode === 13 ){
+            if(this.state.locationName !== ''){
+                this.props.onSubmitLocation(this.state.locationName);
+                this.props.history.push('/weather');
+            };
+        };
+    };
+
+
     inputChangedHandler = event => {
         this.setState({locationName: event.target.value});
     };
@@ -32,6 +42,7 @@ class Home extends Component{
                     <h1 className='Title'>Weather is Life</h1>
                     <div className='Search-Input'>
                         <Input
+                            clicked={this.getWeatherOnKeyPress}
                             placeholder='Search location'
                             value={this.state.locationName}
                             changed={event => this.inputChangedHandler(event)}

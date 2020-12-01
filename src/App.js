@@ -10,6 +10,7 @@ import './App.css';
 
 
 class App extends Component{
+
     componentDidMount() {
         if(localStorage.key('locationName')) this.props.onRefreshHandler(localStorage.getItem('locationName'));
         if(localStorage.key('favorite')) this.props.onGetFavorites();
