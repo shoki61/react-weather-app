@@ -35,6 +35,10 @@ class Weather extends Component{
 
     removeFavoritesHandler = (index) => {
         this.props.onRemoveFavorites(index);
+        setTimeout(()=>{
+            if (this.props.favorites.includes(this.props.location)) this.setState({isFavorite: true});
+            else this.setState({isFavorite: false})
+        },0);
     };
 
     removeAllFavoritesHandler = () => {
