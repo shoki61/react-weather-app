@@ -51,7 +51,10 @@ class Weather extends Component{
         if(this.state.locationName !== ''){
             this.props.onSubmitLocation(this.state.locationName);
             setTimeout(()=>{
-                this.setState({isFavorite: changeFavStarHandler(this.props.favorites, this.props.location)});
+                this.setState({
+                    locationName: '',
+                    isFavorite: changeFavStarHandler(this.props.favorites, this.props.location)
+                });
             },0);
         };
     };
