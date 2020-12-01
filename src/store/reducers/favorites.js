@@ -8,19 +8,28 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.type){
         case actionTypes.ADD_FAVORITES:
-            const newFavorite = action.favorite;
+            const newFavs = [...state.favorites];
+            newFavs.unshift(action.favorite);
+            localStorage.setItem('favorites', JSON.stringify(newFavs));
             return updateObject(state,{
-                favorites: state.favorites.concat(newFavorite)
+                favorites: newFavs
             });
         case actionTypes.REMOVE_FAVORITES:
             const newFavorites = state.favorites.filter((item,index) => index !== action.index);
+            localStorage.setItem('favorites', JSON.stringify(newFavorites));
             return updateObject(state,{
                 favorites: newFavorites
             });
         case actionTypes.REMOVE_ALL_FAVORITES:
+            localStorage.removeItem('favorites');
             return updateObject(state, {
                 favorites: []
-            })
+            });
+        case actionTypes.GET_LOCALSTORAGE_FAVS:
+            const loadFavorite = JSON.parse(localStorage.getItem('favorites'));
+            return updateObject(state,{
+                favorites: loadFavorite
+            });
         default: return state;
     };
 };

@@ -5,5 +5,6 @@ export {
 export {
     addFavorites,
     removeFavorites,
-    removeAllFavorites
+    removeAllFavorites,
+    getLocalStorageFavs
 } from './favorites';
