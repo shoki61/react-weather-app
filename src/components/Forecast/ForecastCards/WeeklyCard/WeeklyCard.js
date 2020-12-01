@@ -2,7 +2,7 @@ import React from 'react';
 import { BsFillDropletFill } from 'react-icons/bs';
 import { FiWind } from 'react-icons/fi';
 import { IoIosCloud, IoMdTimer } from 'react-icons/io';
-import { HiSun, HiMoon } from 'react-icons/hi';
+import { FaTemperatureHigh, FaTemperatureLow } from 'react-icons/fa';
 
 
 import './WeeklyCard.css';
@@ -15,8 +15,8 @@ const styles = {
 };
 
 const DNIconStyle={
-    fontSize: 25,
-    marginRight: 5
+    fontSize: 23,
+    marginRight: 10
 };
 
 const weeklyCard = props => {
@@ -26,18 +26,19 @@ const weeklyCard = props => {
     const windSpeed = Math.round(props.wind * 3.6);
     return (
         <div className='Weekly-Card'>
-            <div className='Date'>
-                <p>{date}</p>
+            <div >
+                <p className='Date'>{date}</p>
+                <p className='Weekly-Condition'>{props.weather[0].main}</p>
             </div>
             <div className='Weekly-Forecast'>
                 <img src={img} alt='img'/>
                 <div className='DN-Forecast'>
                     <div className='DN-Temp'>
-                        <HiSun style={{...DNIconStyle, color: '#ff9100'}}/>
+                        <FaTemperatureHigh style={{...DNIconStyle, color: '#ff860a'}}/>
                         <p>{dayTemp}°C</p>
                     </div>
                     <div className='DN-Temp'>
-                        <HiMoon style={{...DNIconStyle, color: '#fff'}}/>
+                        <FaTemperatureLow style={{...DNIconStyle, color: '#23b2ff'}}/>
                         <p>{nightTemp}°C</p>
                     </div>
                 </div>

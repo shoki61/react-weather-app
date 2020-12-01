@@ -20,7 +20,10 @@ const currentWeather = props => {
                             <p>{new Date(props.currentData.dt * 1000).toLocaleTimeString().slice(0, -3)}</p>
                         </div>
                         <img src={img} alt='icon'/>
-                        <p className='Temp'>{Math.round(props.currentData.temp - 273.15)}°C</p>
+                        <div>
+                            <p className='Temp'>{Math.round(props.currentData.temp - 273.15)}°C</p>
+                            <p className='Weather-Condition'>{props.currentData.weather[0].main}</p>
+                        </div>
                     </div>
                     <div className='Weather-Details'>
                         <div className='Details'>

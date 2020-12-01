@@ -45,6 +45,11 @@
     margin:0 15px
 }
 
+.Weather-Condition{
+    color:seashell;
+    font-family: 'Tauri', sans-serif;
+}
+
 .Weather-Details{
     display: flex;
 }

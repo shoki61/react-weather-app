@@ -10,11 +10,18 @@
     padding: 0 30px;
     box-sizing: border-box;
 }
-.Date p {
+.Date {
     color: seashell;
     font-size: 15px;
     margin:0;
     font-family: 'Tauri', sans-serif;
+}
+
+.Weekly-Condition{
+    color:seashell;
+    font-family: 'Tauri', sans-serif;
+    font-size: 13px;
+    margin:5px 0 0 0;
 }
 
 .Weekly-Forecast {
@@ -38,10 +45,6 @@
     font-family: 'Tauri', sans-serif;
 }
 
-
-.DN-Forecast{
-
-}
 
 .DN-Temp{
     margin:0 30px;
