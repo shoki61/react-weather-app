@@ -9,6 +9,8 @@ import Input from '../../components/Input/Input';
 import Favorites from '../../components/Favorites/Favorites';
 import * as actions from '../../store/actions/index';
 import Button from "../../components/Buttons/Button/Button";
+import { changeFavStarHandler } from '../../helper/utility';
+
 
 
 class Weather extends Component{
@@ -20,24 +22,21 @@ class Weather extends Component{
 
     componentDidMount() {
         setTimeout(()=>{
-            if (this.props.favorites.includes(this.props.location)) this.setState({isFavorite: true});
-            else this.setState({isFavorite: false})
+            this.setState({isFavorite: changeFavStarHandler(this.props.favorites, this.props.location)});
         },0);
     }
 
     addFavoritesHandler = () => {
         this.props.onAddFavorites(this.props.location);
         setTimeout(()=>{
-            if (this.props.favorites.includes(this.props.location)) this.setState({isFavorite: true});
-            else this.setState({isFavorite: false})
+            this.setState({isFavorite: changeFavStarHandler(this.props.favorites, this.props.location)});
         },0);
     };
 
     removeFavoritesHandler = (index) => {
         this.props.onRemoveFavorites(index);
         setTimeout(()=>{
-            if (this.props.favorites.includes(this.props.location)) this.setState({isFavorite: true});
-            else this.setState({isFavorite: false})
+            this.setState({isFavorite: changeFavStarHandler(this.props.favorites, this.props.location)});
         },0);
     };
 
@@ -50,8 +49,7 @@ class Weather extends Component{
         if(this.state.locationName !== ''){
             this.props.onSubmitLocation(this.state.locationName);
             setTimeout(()=>{
-                if (this.props.favorites.includes(this.props.location)) {this.setState({isFavorite: true})}
-                else this.setState({isFavorite: false});
+                this.setState({isFavorite: changeFavStarHandler(this.props.favorites, this.props.location)});
             },0);
         };
     };

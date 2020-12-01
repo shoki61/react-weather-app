@@ -5,3 +5,7 @@ export const updateObject = (oldObject, updatedProperties) => {
         ...updatedProperties
     };
 };
+
+export const changeFavStarHandler = (favorites, currentLocation) => {
+    return favorites.includes(currentLocation);
+};
