@@ -8,7 +8,7 @@ import img from '../../assets/icons/11n.png';
 
 
 const favorites = props => (
-    <div className='Favorites-Card'>
+    <div className='Favorites-Card' onClick={props.showFavoriteWeather}>
         <Button clicked={props.clicked} btnType='Remove'>
             <IoMdRemoveCircleOutline/>
         </Button>
