@@ -18,7 +18,9 @@ const useStyles = makeStyles({
         boxShadow:'none'
     },
     tab:{
-        color:'#787878'
+        color:'#787878',
+        textTransform:'capitalize',
+        fontSize:13
     },
     tabActive:{
         color:'#00a2ff'
@@ -41,13 +43,15 @@ const IconLabelTabs = props => {
                 className='Tabs'
             >
                 <Tab
+                    label='Hourly'
                     classes={{
                         selected:classes.tabActive,
-                        textColorInherit:classes.tab
+                        textColorInherit:classes.tab,
                     }}
                     icon={<ScheduleOutlinedIcon/>}
                 />
                 <Tab
+                    label='Daily'
                     classes={{
                         selected:classes.tabActive,
                         textColorInherit:classes.tab
