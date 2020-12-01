@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-
+import { connect } from 'react-redux';
 
 import Home from './containers/Home/Home';
 import Header from './containers/Header/Header';
 import Weather from './containers/Weather/Weather';
+import * as actions from './store/actions/index';
 import './App.css';
 
 
 class App extends Component{
+    componentDidMount() {
+        this.props.onRefreshHandler(localStorage.getItem('locationName'));
+    };
 
     render(){
         return (
@@ -21,4 +25,10 @@ class App extends Component{
   };
 };
 
-export default App;
+const mapDispatchToProps = dispatch => {
+    return{
+        onRefreshHandler: (location) => dispatch(actions.fetchWeather(location))
+    };
+};
+
+export default connect(null, mapDispatchToProps)(App);

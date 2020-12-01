@@ -29,7 +29,7 @@ export const fetchWeather = location => {
         dispatch(fetchWeatherStart(location));
         axios.get(`/onecall?lat=40.9861&lon=37.8797&appid=${api}`)
             .then(response => {
-                //console.log(response.data.current)
+                localStorage.setItem('locationName', location);
                 dispatch(fetchWeatherSuccess(response.data));
             })
             .catch(error => {
