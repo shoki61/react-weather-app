@@ -8,7 +8,6 @@
     background-color:rgba(0,0,0,.4);
     box-sizing: border-box;
     padding:0 20px;
-    margin-bottom: 10px;
     cursor: pointer;
     position: relative;
 }
@@ -38,11 +37,18 @@
     font-size: 20px;
 }
 
-.Favorites-Card button{
+.Favorite-Container{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.Favorite-Container button{
     visibility: hidden;
 }
 
-.Favorites-Card:hover button{
+.Favorite-Container:hover button{
     visibility: visible;
 }
 
