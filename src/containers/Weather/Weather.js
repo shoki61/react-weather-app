@@ -59,6 +59,20 @@ class Weather extends Component{
         };
     };
 
+    getWeatherOnKeyPress = (event) => {
+        if( event.keyCode === 13 ){
+            if(this.state.locationName !== ''){
+                this.props.onSubmitLocation(this.state.locationName);
+                setTimeout(()=>{
+                    this.setState({
+                        locationName: '',
+                        isFavorite: changeFavStarHandler(this.props.favorites, this.props.location)
+                    });
+                },0);
+            };
+        };
+    };
+
     inputChangedHandler = event => this.setState({locationName: event.target.value});
 
     render(){
@@ -67,6 +81,7 @@ class Weather extends Component{
                 <div className='Weather-Left-Layout'>
                     <div style={{display:'flex'}}>
                         <Input
+                            clicked={this.getWeatherOnKeyPress}
                             value={this.state.locationName}
                             changed={event => this.inputChangedHandler(event)}
                             placeholder='Search city'
