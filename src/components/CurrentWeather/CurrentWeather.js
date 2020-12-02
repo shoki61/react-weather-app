@@ -6,10 +6,12 @@ import './CurrentWeather.css';
 import Button from '../Buttons/Button/Button';
 import Spinner from '../Spinner/Spinner';
 
-import img from '../../assets/icons/11n.png';
+import img from '../../../src/assets/icons/11n.png';
 
 
 const currentWeather = props => {
+
+
     return (
         <div className='Current-Weather-Card'>
             {props.currentData
