@@ -6,7 +6,6 @@ import { FaTemperatureHigh, FaTemperatureLow } from 'react-icons/fa';
 
 
 import './WeeklyCard.css';
-import img from '../../../../assets/icons/10d.png';
 
 
 const styles = {
@@ -31,7 +30,7 @@ const weeklyCard = props => {
                 <p className='Weekly-Condition'>{props.weather[0].main}</p>
             </div>
             <div className='Weekly-Forecast'>
-                <img src={img} alt='img'/>
+                <img src={require(`../../../../../src/assets/icons/${props.weather[0].icon}.png`).default} alt='img'/>
                 <div className='DN-Forecast'>
                     <div className='DN-Temp'>
                         <FaTemperatureHigh style={{...DNIconStyle, color: '#ff860a'}}/>

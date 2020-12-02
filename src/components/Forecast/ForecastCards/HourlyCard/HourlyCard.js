@@ -4,7 +4,6 @@ import { FiWind } from 'react-icons/fi';
 import { IoIosCloud, IoMdTimer } from 'react-icons/io';
 
 import './HourlyCard.css';
-import img from '../../../../assets/icons/11n.png';
 
 
 const styles = {
@@ -17,13 +16,14 @@ const hourlyCard = props => {
     const time = new Date(props.time * 1000).toLocaleTimeString().slice(0, -3);
     const temp = Math.round(props.temp - 273.15);
     const windSpeed = Math.round(props.wind * 3.6);
+    const req = require.context('../../../../../src/assets/icons', true, /.png$/);
     return(
         <div className='Hourly-Card'>
             <div className='Hour'>
                 <p>{time}</p>
             </div>
             <div className='Hourly-Forecast'>
-                <img src={img} alt='img'/>
+                <img src={require(`../../../../../src/assets/icons/${props.weather[0].icon}.png`).default} alt='img'/>
                 <div className='An-Hour-Forecast'>
                     <p className='Hour-Temp'>{temp}°C</p>
                     <p>{props.weather[0].main}</p>

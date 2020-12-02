@@ -19,6 +19,7 @@
 .env.production.local
 .idea
 src/APIKEY.js
+config
 
 npm-debug.log*
 yarn-debug.log*

@@ -6,12 +6,9 @@ import './CurrentWeather.css';
 import Button from '../Buttons/Button/Button';
 import Spinner from '../Spinner/Spinner';
 
-import img from '../../../src/assets/icons/11n.png';
 
 
 const currentWeather = props => {
-
-
     return (
         <div className='Current-Weather-Card'>
             {props.currentData
@@ -21,7 +18,7 @@ const currentWeather = props => {
                         <div className='Time'>
                             <p>{new Date(props.currentData.dt * 1000).toLocaleTimeString().slice(0, -3)}</p>
                         </div>
-                        <img src={img} alt='icon'/>
+                        <img src={require(`../../../src/assets/icons/${props.currentData.weather[0].icon}.png`).default} alt='icon'/>
                         <div>
                             <p className='Temp'>{Math.round(props.currentData.temp - 273.15)}°C</p>
                             <p className='Weather-Condition'>{props.currentData.weather[0].main}</p>
