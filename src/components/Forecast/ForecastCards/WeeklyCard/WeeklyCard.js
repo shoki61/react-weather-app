@@ -25,29 +25,34 @@ const weeklyCard = props => {
     const windSpeed = Math.round(props.wind * 3.6);
     return (
         <div className='Weekly-Card'>
-            <div >
-                <p className='Date'>{date}</p>
-                <p className='Weekly-Condition'>{props.weather[0].main}</p>
-            </div>
-            <div className='Weekly-Forecast'>
-                <img src={require(`../../../../../src/assets/icons/${props.weather[0].icon}.png`).default} alt='img'/>
-                <div className='DN-Forecast'>
-                    <div className='DN-Temp'>
-                        <FaTemperatureHigh style={{...DNIconStyle, color: '#ff860a'}}/>
-                        <p>{dayTemp}°C</p>
-                    </div>
-                    <div className='DN-Temp'>
-                        <FaTemperatureLow style={{...DNIconStyle, color: '#23b2ff'}}/>
-                        <p>{nightTemp}°C</p>
+            <div className='Date-Weekly-Container'>
+                <div className='Date-Container'>
+                    <p className='Date'>{date}</p>
+                    <p className='Weekly-Condition'>{props.weather[0].main}</p>
+                </div>
+                <div className='Weekly-Forecast'>
+                    <img src={require(`../../../../../src/assets/icons/${props.weather[0].icon}.png`).default} alt='img'/>
+                    <div className='DN-Forecast'>
+                        <div className='DN-Temp'>
+                            <FaTemperatureHigh style={{...DNIconStyle, color: '#ff860a'}}/>
+                            <p>{dayTemp}°C</p>
+                        </div>
+                        <div className='DN-Temp'>
+                            <FaTemperatureLow style={{...DNIconStyle, color: '#23b2ff'}}/>
+                            <p>{nightTemp}°C</p>
+                        </div>
                     </div>
                 </div>
-
             </div>
             <div className='Weekly-Details'>
-                <p><BsFillDropletFill style={{color: '#00a2ff', ...styles}}/> %{props.humidity}</p>
-                <p><IoMdTimer style={{color: '#ff6f00', ...styles}}/> {props.pressure} hPa</p>
-                <p><FiWind style={{...styles}}/> {windSpeed} km/h</p>
-                <p><IoIosCloud style={{...styles}}/> %{props.clouds}</p>
+                <div>
+                    <p><BsFillDropletFill style={{color: '#00a2ff', ...styles}}/> %{props.humidity}</p>
+                    <p><IoMdTimer style={{color: '#ff6f00', ...styles}}/> {props.pressure} hPa</p>
+                </div>
+                <div>
+                    <p><FiWind style={{...styles}}/> {windSpeed} km/h</p>
+                    <p><IoIosCloud style={{...styles}}/> %{props.clouds}</p>
+                </div>
             </div>
         </div>
     )
