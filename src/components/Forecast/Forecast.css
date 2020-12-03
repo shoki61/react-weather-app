@@ -1,8 +1,18 @@
+.Forecast{
+    width:600px
+}
+
 .Location-Name{
     font-weight: 100;
     color: seashell;
     font-family: 'Amaranth', sans-serif;
     letter-spacing: 2px;
     font-size: 25px;
-    width: 600px;
+    width: 100%;
+}
+
+@media (max-width: 1000px){
+    .Forecast{
+        width: 85%;
+    }
 }
