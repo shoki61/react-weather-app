@@ -15,8 +15,8 @@
 }
 
 
-@media (max-width: 1000px){
+@media (max-width: 1030px){
     .Root{
-        width: 95%;
+        width: 100%;
     }
 }

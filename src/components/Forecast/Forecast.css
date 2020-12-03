@@ -14,5 +14,8 @@
 @media (max-width: 1030px){
     .Forecast{
         width: 85%;
+        align-items: center;
+        flex-direction: column;
+        display: flex;
     }
 }
