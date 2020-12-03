@@ -59,6 +59,8 @@
     margin:10px 0
 }
 
-.Condition{
-
+@media (max-width: 1000px){
+    .Weekly-Card{
+        width: 95%;
+    }
 }

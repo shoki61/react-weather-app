@@ -10,6 +10,14 @@
     padding:0 20px;
     cursor: pointer;
     position: relative;
+    margin: 0 0 10px 0
+}
+
+.City-Info-Container{
+    display: flex;
+    width:100%;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .Favorites-Card:hover{
@@ -24,11 +32,11 @@
     font-size: 18px;
     font-family: 'Amaranth', sans-serif;
     color: seashell;
-    width: 100%;
     text-align: left;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    margin:0;
 }
 
 .Temperature{
@@ -44,12 +52,28 @@
     margin-bottom: 10px;
 }
 
-.Favorite-Container button{
+.Favorites-Card button{
     visibility: hidden;
 }
 
-.Favorite-Container:hover button{
+.Favorites-Card:hover button{
     visibility: visible;
+}
+
+@media (max-width: 500px){
+    .Favorites-Card{
+        width: 85%;
+        justify-content: center;
+        align-items: center;
+    }
+    .Favorites-Card button {
+        visibility: visible;
+        position: relative;
+        left:0;
+        background-color: rgba(255, 0, 0, 0.2);
+        margin:0 0 0 15px;
+        border-radius: 7px;
+    }
 }
 
 

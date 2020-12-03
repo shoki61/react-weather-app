@@ -54,12 +54,17 @@
     display: none;
 }
 
-@media (max-width: 1000px){
+@media (max-width: 1030px){
     .Weather{
         display: block;
     }
-    .Weather-Right-Layout, .Weather-Left-Layout{
+    .Weather-Right-Layout, .Weather-Left-Layout {
         width: 100%;
         align-items: center;
+        padding: 100px 0 0 0;
+        overflow: visible;
+    }
+    .Weather-Right-Layout{
+        padding: 0;
     }
 }
