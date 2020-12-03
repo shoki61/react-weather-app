@@ -28,3 +28,13 @@
 .Search-Input{
     display: flex;
 }
+
+@media (max-width: 500px) {
+    .Search-Input{
+        flex-direction: column;
+        align-items: center;
+    }
+    button{
+        margin-top:15px
+    }
+}

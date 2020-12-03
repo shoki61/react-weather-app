@@ -16,7 +16,6 @@ const hourlyCard = props => {
     const time = new Date(props.time * 1000).toLocaleTimeString().slice(0, -3);
     const temp = Math.round(props.temp - 273.15);
     const windSpeed = Math.round(props.wind * 3.6);
-    const req = require.context('../../../../../src/assets/icons', true, /.png$/);
     return(
         <div className='Hourly-Card'>
             <div className='Hour'>

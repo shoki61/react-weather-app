@@ -1,12 +1,16 @@
 .Weather {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+.Back-Image{
+    position: fixed;
     background: url("../../assets/darkModeImg.jpg") no-repeat center;
     background-size: cover;
     height: 100vh;
     width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
+    z-index: -100;
 }
 
 .Weather-Left-Layout {
@@ -46,4 +50,13 @@
 
 .Weather-Left-Layout::-webkit-scrollbar {
     display: none;
+}
+
+@media (max-width: 500px){
+    .Weather{
+        display: block;
+    }
+    .Weather-Right-Layout, .Weather-Left-Layout{
+        width: 100%;
+    }
 }
