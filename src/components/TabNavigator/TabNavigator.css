@@ -1,3 +1,10 @@
+.Root{
+    width: 600px;
+    background-color: transparent!important;
+    box-shadow: none!important;
+    flex-grow: 1;
+}
+
 .Tabs{
     background-color: rgba(0,0,0,.4);
     border-radius: 7px;
@@ -5,4 +12,11 @@
 
 .tab{
     color:blue
+}
+
+
+@media (max-width: 1000px){
+    .Root{
+        width: 95%;
+    }
 }

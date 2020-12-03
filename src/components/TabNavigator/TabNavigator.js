@@ -11,12 +11,6 @@ import './TabNavigator.css';
 
 
 const useStyles = makeStyles({
-    root: {
-        flexGrow: 1,
-        width:600,
-        backgroundColor:'transparent',
-        boxShadow:'none'
-    },
     tab:{
         color:'#787878',
         textTransform:'capitalize',
@@ -32,7 +26,7 @@ const IconLabelTabs = props => {
     const classes = useStyles();
 
     return (
-        <Paper square className={classes.root}>
+        <Paper square className='Root'>
             <Tabs
                 value={props.value}
                 onChange={props.changed}
