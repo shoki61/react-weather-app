@@ -69,3 +69,9 @@
     color:#e1e1e1;
     margin-top: 5px;
 }
+
+@media (max-width: 500px) {
+    .Current-Weather-Card{
+        width: 85%;
+    }
+}

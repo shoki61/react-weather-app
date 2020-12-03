@@ -34,6 +34,8 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
     box-sizing: border-box;
+    flex-direction: column;
+    display: flex;
 }
 
 .Weather-Left-Layout span {
@@ -52,11 +54,12 @@
     display: none;
 }
 
-@media (max-width: 500px){
+@media (max-width: 1000px){
     .Weather{
         display: block;
     }
     .Weather-Right-Layout, .Weather-Left-Layout{
         width: 100%;
+        align-items: center;
     }
 }
