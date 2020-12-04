@@ -22,18 +22,12 @@
     flex-direction: column;
     box-sizing: border-box;
     padding: 150px 0 50px 0;
-    overflow: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
 }
 
 .Weather-Right-Layout {
     width: 50%;
     height: 100%;
     padding:100px 0 50px 0;
-    overflow: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
     box-sizing: border-box;
     flex-direction: column;
     display: flex;

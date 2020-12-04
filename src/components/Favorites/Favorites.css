@@ -45,13 +45,6 @@
     font-size: 20px;
 }
 
-.Favorite-Container{
-    display: flex;
-    align-items: center;
-    position: relative;
-    margin-bottom: 10px;
-}
-
 .Favorites-Card button{
     visibility: hidden;
 }
