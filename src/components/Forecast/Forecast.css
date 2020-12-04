@@ -1,5 +1,5 @@
 .Forecast{
-    width:600px
+    width:90%;
 }
 
 .Location-Name{
@@ -16,5 +16,6 @@
         width: 85%;
         flex-direction: column;
         display: flex;
+        padding-bottom: 50px;
     }
 }
