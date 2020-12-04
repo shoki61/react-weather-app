@@ -62,7 +62,7 @@ class Home extends Component{
 
 const mapDispatchToProps = dispatch => {
     return{
-        onSubmitLocation: (location) => dispatch(action.fetchWeather(location))
+        onSubmitLocation: location => dispatch(action.fetchWeather(location)),
     };
 };
 

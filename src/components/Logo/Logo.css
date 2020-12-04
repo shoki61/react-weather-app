@@ -2,6 +2,7 @@
     height: 100%;
     box-sizing: border-box;
     display: flex;
+    cursor: pointer;
 }
 
 img {
@@ -19,7 +20,7 @@ img {
     font-size: 18px;
     color: #fff;
     font-weight: 600;
-    font-family: 'Acme';
+    font-family: 'Acme', sans-serif;
     letter-spacing: 1px;
 }
 

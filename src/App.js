@@ -29,6 +29,7 @@ class App extends Component{
   };
 };
 
+
 const mapDispatchToProps = dispatch => {
     return{
         onRefreshHandler: (location) => dispatch(actions.fetchWeather(location)),
