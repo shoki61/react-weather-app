@@ -1,6 +1,6 @@
 import * as actionTypes from './actionTypes';
 import axios from '../../axios-weather';
-import {api} from '../../APIKEY';
+import {api, geocodeApi} from '../../APIKEY';
 
 
 export const fetchWeatherStart = (location) => {
@@ -27,14 +27,20 @@ export const fetchWeatherFail = (error) => {
 export const fetchWeather = location => {
     return dispatch => {
         dispatch(fetchWeatherStart(location));
-        axios.get(`/onecall?lat=40.9861&lon=37.8797&appid=${api}`)
+        axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=${geocodeApi}`)
             .then(response => {
-                localStorage.setItem('locationName', location);
-                dispatch(fetchWeatherSuccess(response.data));
+                const location = response.data.results[0].geometry.location;
+                axios.get(`/onecall?lat=${location.lat}&lon=${location.lng}&appid=${api}`)
+                    .then(response => {
+                        localStorage.setItem('locationName', location);
+                        dispatch(fetchWeatherSuccess(response.data));
+                    })
+                    .catch(error => {
+                        dispatch(fetchWeatherFail(error))
+                    });
             })
-            .catch(error => {
-                dispatch(fetchWeatherFail(error))
-            });
+            .catch(err => console.log(err))
+
     };
 };
 
