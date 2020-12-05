@@ -24,24 +24,30 @@ export const fetchWeatherFail = (error) => {
     };
 };
 
-export const fetchWeather = location => {
+export const errorConfirmed = () => {
+    return{
+        type: actionTypes.ERROR_CONFIRMED
+    }
+}
+
+export const fetchWeather = (location) => {
     return dispatch => {
-        dispatch(fetchWeatherStart(location));
+        dispatch(fetchWeatherStart(location))
+        localStorage.setItem('locationName', location);
         axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=${geocodeApi}`)
             .then(response => {
+                console.log(response.data)
                 const location = response.data.results[0].geometry.location;
                 axios.get(`/onecall?lat=${location.lat}&lon=${location.lng}&appid=${api}`)
                     .then(response => {
-                        localStorage.setItem('locationName', location);
-                        dispatch(fetchWeatherSuccess(response.data));
+                        dispatch(fetchWeatherSuccess(response.data))
                     })
-                    .catch(error => {
+                    .catch(error=> {
                         dispatch(fetchWeatherFail(error))
-                    });
+                    })
             })
-            .catch(err => console.log(err))
-
-    };
+            .catch(err => dispatch(fetchWeatherFail(err)))
+    }
 };
 
 

@@ -7,7 +7,6 @@ import Input from '../../components/Input/Input';
 import Button from '../../components/Buttons/Button/Button';
 import * as action from '../../store/actions/index';
 
-
 class Home extends Component{
 
     state = {

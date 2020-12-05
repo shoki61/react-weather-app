@@ -1,5 +1,6 @@
 export {
-    fetchWeather
+    fetchWeather,
+    errorConfirmed
 } from './weather';
 
 export {

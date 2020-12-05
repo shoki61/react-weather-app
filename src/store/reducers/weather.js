@@ -17,6 +17,9 @@ const reducer = (state = initialState, action) => {
             return updateObject(state,{
                 location: locationFixed,
                 loading:true,
+                currentWeather: null,
+                hourlyForecast: null,
+                weeklyForecast: null,
                 error:null
             });
         case actionTypes.FETCH_WEATHER_SUCCESS :
@@ -30,6 +33,8 @@ const reducer = (state = initialState, action) => {
             return updateObject(state,{
                 error: action.error
             })
+        case actionTypes.ERROR_CONFIRMED:
+            return updateObject(state,{error:null})
         default : return state
     };
 };

@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {BsSearch} from "react-icons/bs";
+import ErrorIcon from "@material-ui/icons/ErrorOutline";
 
 import './Weather.css';
 import CurrentWeather from '../../components/CurrentWeather/CurrentWeather';
 import Forecast from '../../components/Forecast/Forecast';
 import Input from '../../components/Input/Input';
 import Favorites from '../../components/Favorites/Favorites';
-import * as actions from '../../store/actions/index';
 import Button from "../../components/Buttons/Button/Button";
+import Modal from "../../components/Modal/Modal";
 import { changeFavStarHandler } from '../../helper/utility';
+import * as actions from '../../store/actions/index';
 
 
 
@@ -75,9 +77,24 @@ class Weather extends Component{
 
     inputChangedHandler = event => this.setState({locationName: event.target.value});
 
+    errorConfirmedHandler = () => {
+        this.props.onErrorConfirmed()
+    }
+
     render(){
         return(
             <div className='Weather'>
+                {
+                    this.props.error
+                        ? <Modal>
+                            <ErrorIcon style={{fontSize:50, color:'#ff0000'}}/>
+                            <p>Oops! Something went wrong...</p>
+                            <Button clicked={this.errorConfirmedHandler} btnType='Error'>
+                                Try again!
+                            </Button>
+                          </Modal>
+                        : null
+                }
                 <div className='Back-Image'> </div>
                 <div className='Weather-Left-Layout'>
                     <div style={{display:'flex'}}>
@@ -138,7 +155,8 @@ const mapStateToProps = state => {
         weekly: state.weather.weeklyForecast,
         location: state.weather.location,
         favorites: state.favLocations.favorites,
-        isFavorite: state.favLocations.isFavorite
+        isFavorite: state.favLocations.isFavorite,
+        error: state.weather.error
     };
 };
 
@@ -147,7 +165,8 @@ const mapDispatchToProps = dispatch => {
         onAddFavorites: (location) => dispatch(actions.addFavorites(location)),
         onRemoveFavorites: (index) => dispatch(actions.removeFavorites(index)),
         onRemoveAllFavorites: () => dispatch(actions.removeAllFavorites()),
-        onSubmitLocation: (location) => dispatch(actions.fetchWeather(location))
+        onSubmitLocation: (location) => dispatch(actions.fetchWeather(location)),
+        onErrorConfirmed: () => dispatch(actions.errorConfirmed())
     };
 };
 
