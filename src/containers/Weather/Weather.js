@@ -86,7 +86,7 @@ class Weather extends Component{
             <div className='Weather'>
                 {
                     this.props.error
-                        ? <Modal>
+                        ? <Modal close={this.props.onErrorConfirmed()}>
                             <ErrorIcon style={{fontSize:50, color:'#ff0000'}}/>
                             <p>Oops! Something went wrong...</p>
                             <Button clicked={this.errorConfirmedHandler} btnType='Error'>
