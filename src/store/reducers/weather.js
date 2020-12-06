@@ -7,7 +7,8 @@ const initialState = {
     hourlyForecast: null,
     weeklyForecast: null,
     error: null,
-    loading: false
+    loading: false,
+    lightMode: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -29,12 +30,11 @@ const reducer = (state = initialState, action) => {
                 hourlyForecast: action.data.hourly,
                 weeklyForecast: action.data.daily
             })
-        case actionTypes.FETCH_WEATHER_FAIL:
-            return updateObject(state,{
-                error: action.error
-            })
-        case actionTypes.ERROR_CONFIRMED:
-            return updateObject(state,{error:null})
+        case actionTypes.FETCH_WEATHER_FAIL: return updateObject(state,{error: action.error});
+        case actionTypes.ERROR_CONFIRMED: return updateObject(state,{error:null});
+        case actionTypes.MODE_SELECTOR:
+            console.log(action.value)
+            return updateObject(state,{lightMode: action.value})
         default : return state
     };
 };

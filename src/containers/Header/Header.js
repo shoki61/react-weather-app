@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Logo from '../../components/Logo/Logo';
-import SwitchLabels from "../../components/Buttons/SwitchButton/SwitchButton";
+import SwitchButton from "../../components/Buttons/SwitchButton/SwitchButton";
 import './Header.css';
 
 
@@ -13,7 +13,7 @@ class Header extends Component{
                 <a href='https://github.com/shoki61/react-weather-app' target='_blank'>
                     <i className="fab fa-github"> </i>
                 </a>
-                <SwitchLabels/>
+                <SwitchButton checked={this.props.value} clicked={this.props.clicked}/>
             </div>
         );
     };

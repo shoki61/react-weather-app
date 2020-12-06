@@ -3,31 +3,20 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 
-const  SwitchLabels = () => {
-    const [state, setState] = React.useState({
-        checkedA: false,
-        checkedB: false,
-    });
+const  switchLabels = props =>  (
+    <FormGroup row>
+        <FormControlLabel
+            control={
+                <Switch
+                    checked={props.checked}
+                    onChange={props.clicked}
+                    name="checkedB"
+                    color="primary"
+                />
+            }
+            label="Light Mode"
+        />
+    </FormGroup>
+);
 
-    const handleChange = (event) => {
-        setState({ ...state, [event.target.name]: event.target.checked });
-    };
-
-    return (
-        <FormGroup row>
-            <FormControlLabel
-                control={
-                    <Switch
-                        checked={state.checkedB}
-                        onChange={handleChange}
-                        name="checkedB"
-                        color="primary"
-                    />
-                }
-                label="Light Mode"
-            />
-        </FormGroup>
-    );
-};
-
-export default SwitchLabels;
+export default switchLabels;

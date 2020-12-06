@@ -27,8 +27,15 @@ export const fetchWeatherFail = (error) => {
 export const errorConfirmed = () => {
     return{
         type: actionTypes.ERROR_CONFIRMED
-    }
-}
+    };
+};
+
+export const modeSelector = (value) => {
+    return{
+        type: actionTypes.MODE_SELECTOR,
+        value: value
+    };
+};
 
 export const fetchWeather = (location) => {
     return dispatch => {

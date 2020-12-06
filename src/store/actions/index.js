@@ -1,6 +1,7 @@
 export {
     fetchWeather,
-    errorConfirmed
+    errorConfirmed,
+    modeSelector
 } from './weather';
 
 export {
