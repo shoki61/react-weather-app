@@ -3,6 +3,7 @@ import { BsSearch } from 'react-icons/bs';
 import { connect } from 'react-redux';
 
 import './Home.css';
+import '../../mode-css/Mode.css';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Buttons/Button/Button';
 import * as action from '../../store/actions/index';
@@ -35,12 +36,14 @@ class Home extends Component{
     };
 
     render(){
+        const modeImg = this.props.mode ? 'Light-Mode-BackImg' : 'Dark-Mode-BackImg';
         return(
-            <div className='Home'>
+            <div className={['Home', modeImg].join(' ')}>
                 <div style={{marginBottom:75}}>
                     <h1 className='Title'>Weather is Life</h1>
                     <div className='Search-Input'>
                         <Input
+                            mode={this.props.mode}
                             clicked={this.getWeatherOnKeyPress}
                             placeholder='Search location'
                             value={this.state.locationName}

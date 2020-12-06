@@ -6,8 +6,17 @@
     border-bottom: 2px solid #fff;
     outline: none;
     font-size: 18px;
-    color:#fff;
     text-align: center;
+}
+
+::placeholder{
+    transition: all .3s ease-in-out;
+    color:seashell;
+}
+
+.Input:focus::placeholder{
+    color: transparent;
+    text-shadow: none;
 }
 
 

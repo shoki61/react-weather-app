@@ -29,8 +29,8 @@ class App extends Component{
         return (
             <div className="App">
                 <Header value={this.state.checkedB} clicked={this.changeMode}/>
-                <Route path='/' exact component={Home}/>
-                <Route path='/weather' component={Weather}/>
+                <Route path='/' exact render={props => <Home mode={this.state.checkedB} {...props}/>}/>
+                <Route path='/weather' render={props => <Weather mode={this.state.checkedB} {...props}/>}/>
             </div>
         );
   };
