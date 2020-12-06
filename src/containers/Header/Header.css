@@ -1,19 +1,18 @@
 .Header {
     width: 100%;
     height:65px;
-    background-color: #131328;
     display:flex;
     box-sizing: border-box;
     justify-content: space-between;
     align-items: center;
     padding: 0 25px;
-    box-shadow: 0 1px 1px 0 #131328;
     position: fixed;
     z-index: 100;
+    transition: all .3s ease-out;
 }
+
 a {
     text-decoration: none;
-    color: #fff;
     border-bottom: 2px solid transparent;
     transition: all .3s linear;
     padding: 0  10px 3px 10px;
@@ -23,6 +22,5 @@ a:hover{
 }
 
 i {
-    color:#fff;
     font-size: 25px;
 }

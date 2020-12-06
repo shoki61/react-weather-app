@@ -1,0 +1,25 @@
+.Dark-Mode-Background{
+    background-color: #131328;
+}
+
+.Dark-Mode-Color{
+    color: seashell;
+}
+
+.Dark-Mode-Box-Shadow{
+    box-shadow: 0 1px 1px 0 #131328;
+}
+
+
+
+.Light-Mode-Background{
+    background-color: #fff;
+}
+
+.Light-Mode-Color{
+    color: #4a4a4a
+}
+
+.Light-Mode-Box-Shadow{
+    box-shadow: 0 1px 1px 0 #fff;
+}

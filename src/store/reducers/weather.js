@@ -7,14 +7,13 @@ const initialState = {
     hourlyForecast: null,
     weeklyForecast: null,
     error: null,
-    loading: false,
-    lightMode: false
+    loading: false
 }
 
 const reducer = (state = initialState, action) => {
     switch (action.type){
         case actionTypes.FETCH_WEATHER_START :
-            const locationFixed = action.location.charAt(0).toUpperCase() + action.location.slice(1).toLowerCase()
+            const locationFixed = action.location.charAt(0).toUpperCase() + action.location.slice(1).toLowerCase();
             return updateObject(state,{
                 location: locationFixed,
                 loading:true,
@@ -29,13 +28,10 @@ const reducer = (state = initialState, action) => {
                 currentWeather: action.data.current,
                 hourlyForecast: action.data.hourly,
                 weeklyForecast: action.data.daily
-            })
+            });
         case actionTypes.FETCH_WEATHER_FAIL: return updateObject(state,{error: action.error});
         case actionTypes.ERROR_CONFIRMED: return updateObject(state,{error:null});
-        case actionTypes.MODE_SELECTOR:
-            console.log(action.value)
-            return updateObject(state,{lightMode: action.value})
-        default : return state
+        default : return state;
     };
 };
 

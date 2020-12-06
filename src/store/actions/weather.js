@@ -30,13 +30,6 @@ export const errorConfirmed = () => {
     };
 };
 
-export const modeSelector = (value) => {
-    return{
-        type: actionTypes.MODE_SELECTOR,
-        value: value
-    };
-};
-
 export const fetchWeather = (location) => {
     return dispatch => {
         dispatch(fetchWeatherStart(location))
