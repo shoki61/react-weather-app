@@ -1,6 +1,11 @@
 .Dark-Mode-Background{
     background-color: #131328;
 }
+
+.Dark-Mode-Background a{
+    color:seashell;
+}
+
 .Dark-Mode-BackImg{
     background: url("../assets/darkModeImg.jpg") no-repeat center center;
     background-size: cover;
@@ -17,7 +22,15 @@
 
 
 .Light-Mode-Background{
-    background-color: seashell;
+    background-color: rgba(225,225,225,.95);
+}
+
+.Light-Mode-Background a{
+    color:#4a4a4a
+}
+
+.Light-Mode-Background a:hover{
+    border-bottom: 2px solid #4a4a4a;
 }
 
 .Light-Mode-BackImg{
@@ -42,5 +55,5 @@
 }
 
 .Light-Mode-Box-Shadow{
-    box-shadow: 0 1px 1px 0 seashell;
+    box-shadow: 0 1px 1px 0 rgba(225,225,225,.95);
 }
