@@ -1,6 +1,10 @@
 .Dark-Mode-Background{
     background-color: #131328;
 }
+.Dark-Mode-BackImg{
+    background: url("../assets/darkModeImg.jpg") no-repeat center center;
+    background-size: cover;
+}
 
 .Dark-Mode-Color{
     color: seashell;
@@ -14,6 +18,11 @@
 
 .Light-Mode-Background{
     background-color: #fff;
+}
+
+.Light-Mode-BackImg{
+    background: url("../assets/lightModeImg.jpg") no-repeat center center;
+    background-size: cover;
 }
 
 .Light-Mode-Color{

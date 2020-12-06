@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import './Logo.css';
 import AppLogo from '../../assets/logo.png';
+import './Logo.css';
 import '../../mode-css/Mode.css';
 
 const logo = props => {

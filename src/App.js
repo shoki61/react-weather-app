@@ -28,7 +28,7 @@ class App extends Component{
     render(){
         return (
             <div className="App">
-                <Header mode={this.state.checkedB} value={this.state.checkedB} clicked={this.changeMode}/>
+                <Header value={this.state.checkedB} clicked={this.changeMode}/>
                 <Route path='/' exact component={Home}/>
                 <Route path='/weather' component={Weather}/>
             </div>
