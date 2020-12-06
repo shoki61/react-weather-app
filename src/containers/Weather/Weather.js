@@ -4,6 +4,7 @@ import {BsSearch} from "react-icons/bs";
 import ErrorIcon from "@material-ui/icons/ErrorOutline";
 
 import './Weather.css';
+import '../../mode-css/Mode.css';
 import CurrentWeather from '../../components/CurrentWeather/CurrentWeather';
 import Forecast from '../../components/Forecast/Forecast';
 import Input from '../../components/Input/Input';
@@ -82,6 +83,7 @@ class Weather extends Component{
     }
 
     render(){
+        const modeBackImg = this.props.mode ? 'Light-Mode-BackImg' : 'Dark-Mode-BackImg';
         return(
             <div className='Weather'>
                 {
@@ -95,7 +97,7 @@ class Weather extends Component{
                           </Modal>
                         : null
                 }
-                <div className='Back-Image'> </div>
+                <div className={['Back-Image',modeBackImg].join(' ')}> </div>
                 <div className='Weather-Left-Layout'>
                     <div style={{display:'flex'}}>
                         <Input
