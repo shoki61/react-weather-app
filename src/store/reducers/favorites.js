@@ -10,7 +10,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.ADD_FAVORITES:
             const newFavs = [...state.favorites];
             newFavs.unshift(action.favorite);
-            localStorage.setItem('favorites', JSON.stringify(newFavs));
+            localStorage.setItem('favorites', JSON.stringify(newFavs.map(item => item.name)));
             return updateObject(state,{
                 favorites: newFavs
             });

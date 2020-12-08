@@ -1,11 +1,12 @@
 export {
     fetchWeather,
-    errorConfirmed
+    errorConfirmed,
 } from './weather';
 
 export {
     addFavorites,
     removeFavorites,
     removeAllFavorites,
-    getLocalStorageFavs
+    getLocalStorageFavs,
+    fetchFavorite
 } from './favorites';

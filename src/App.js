@@ -20,7 +20,13 @@ class App extends Component{
         const locationName = localStorage.getItem('locationName');
         if(locationName) this.props.onRefreshHandler(localStorage.getItem('locationName'));
         const favorites = localStorage.getItem('favorites');
-        if(favorites) this.props.onGetFavorites();
+        if(favorites){
+            const favs = JSON.parse(favorites);
+            for(let i=0; i < favs.length; i++){
+                console.log(favs[i])
+                this.props.onGetFavorites(favs[i]);
+            };
+        };
     };
 
     changeMode = (event) => this.setState({[event.target.name]: event.target.checked});
@@ -40,7 +46,7 @@ class App extends Component{
 const mapDispatchToProps = dispatch => {
     return{
         onRefreshHandler: location => dispatch(actions.fetchWeather(location)),
-        onGetFavorites: () => dispatch(actions.getLocalStorageFavs())
+        onGetFavorites: (locationName) => dispatch(actions.fetchFavorite(locationName))
     };
 };
 

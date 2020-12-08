@@ -1,10 +1,12 @@
 import * as actionTypes from './actionTypes';
+import axios from "../../axios-weather";
+import {api, geocodeApi} from "../../APIKEY";
 
 
-export const addFavorites = (location) => {
+export const addFavorites = (favorite) => {
     return {
         type: actionTypes.ADD_FAVORITES,
-        favorite: location
+        favorite: favorite
     };
 };
 
@@ -26,3 +28,24 @@ export const getLocalStorageFavs = () => {
         type: actionTypes.GET_LOCALSTORAGE_FAVS
     };
 };
+
+
+export const fetchFavorite = (locationName) => {
+    return dispatch => {
+        axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${locationName}&key=${geocodeApi}`)
+            .then(response => {
+                const location = response.data.results[0].geometry.location;
+                axios.get(`/onecall?lat=${location.lat}&lon=${location.lng}&appid=${api}`)
+                    .then(response => {
+                        dispatch(addFavorites({
+                            name: locationName,
+                            icon: response.data.current.weather[0].icon,
+                            temp: response.data.current.temp
+                        }));
+                    })
+                    .catch(error=> error);
+            })
+            .catch(err => err);
+    };
+};
+

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {BsSearch} from "react-icons/bs";
+import { BsSearch } from "react-icons/bs";
 import ErrorIcon from "@material-ui/icons/ErrorOutline";
 
 import './Weather.css';
@@ -23,6 +23,10 @@ class Weather extends Component{
         isFavorite: false,
     };
 
+    componentWillMount() {
+        console.log(this.props.favorites)
+    }
+
     componentDidMount() {
         setTimeout(()=>{
             this.setState({isFavorite: changeFavStarHandler(this.props.favorites, this.props.location)});
@@ -30,9 +34,14 @@ class Weather extends Component{
     }
 
     addFavoritesHandler = () => {
-        if(!changeFavStarHandler(this.props.favorites,this.props.location)){
-            this.props.onAddFavorites(this.props.location)
-        };
+        this.props.onAddFavorites({
+            name:this.props.location,
+            icon:this.props.current.weather[0].icon,
+            temp:this.props.current.temp
+        });
+        //if(!changeFavStarHandler(this.props.favorites,this.props.location)){
+        //    this.props.onAddFavorites(this.props.location)
+        //};
         setTimeout(()=>{
             this.setState({isFavorite: changeFavStarHandler(this.props.favorites, this.props.location)});
         },0);
@@ -128,14 +137,18 @@ class Weather extends Component{
                             : null
                     }
                     {
-                        this.props.favorites.map((item,index) => (
-                            <Favorites
-                                clicked={()=> this.removeFavoritesHandler(index)}
-                                showFavoriteWeather={()=> this.props.onSubmitLocation(item)}
-                                key={item}
-                                locationName={item}
-                            />
-                        ))
+                        this.props.favorites.length > 0
+                            ? this.props.favorites.map((item,index) => (
+                                <Favorites
+                                    clicked={()=> this.removeFavoritesHandler(index)}
+                                    showFavoriteWeather={()=> this.props.onSubmitLocation(item.name)}
+                                    key={item.name}
+                                    name={item.name}
+                                    icon={item.icon}
+                                    temp={item.temp}
+                                />
+                            ))
+                            : null
                     }
                 </div>
                 <div className='Weather-Right-Layout'>
@@ -164,7 +177,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onAddFavorites: (location) => dispatch(actions.addFavorites(location)),
+        onAddFavorites: (favorite) => dispatch(actions.addFavorites(favorite)),
         onRemoveFavorites: (index) => dispatch(actions.removeFavorites(index)),
         onRemoveAllFavorites: () => dispatch(actions.removeAllFavorites()),
         onSubmitLocation: (location) => dispatch(actions.fetchWeather(location)),
