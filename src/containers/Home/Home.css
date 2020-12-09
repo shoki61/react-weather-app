@@ -1,10 +1,17 @@
 .Home{
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
+    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
     transition: all .3s ease-out;
+}
+
+.Home-Container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .Title{
@@ -13,13 +20,21 @@
     font-weight: 100;
     font-family: "Comic Sans MS", cursive, sans-serif;
     margin-bottom: 50px;
+    text-shadow: 1px 1px 2px grey;
 }
 
 .Search-Input{
     display: flex;
+    margin-bottom: 20px;
 }
 
-@media (max-width: 500px) {
+@media (min-width: 600px) and (max-width: 1030px){
+    .Home-Container{
+        width: 60%;
+    }
+}
+
+@media (max-width: 600px) {
     .Search-Input{
         flex-direction: column;
         align-items: center;
@@ -27,4 +42,5 @@
     .Search-Input button{
         margin-top:15px
     }
+
 }

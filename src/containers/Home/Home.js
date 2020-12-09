@@ -43,10 +43,11 @@ class Home extends Component{
 
 
     render(){
-        const modeImg = this.props.mode ? 'Light-Mode-BackImg' : 'Dark-Mode-BackImg';
+        const modeBackImg = this.props.mode ? 'Light-Mode-BackImg' : 'Dark-Mode-BackImg';
         return(
-            <div className={['Home', modeImg].join(' ')}>
-                <div style={{marginBottom:75}}>
+            <div className='Home'>
+                <div className={['Back-Image',modeBackImg].join(' ')}> </div>
+                <div style={this.props.favorites.length ? {paddingTop:100} : null} className='Home-Container'>
                     <h1 className='Title'>Weather is Life</h1>
                     <div className='Search-Input'>
                         <Input
@@ -65,7 +66,7 @@ class Home extends Component{
                     </div>
                     {
                         this.props.favorites.length > 0
-                          ? this.props.favorites.map((item,index) => (
+                            ? this.props.favorites.map((item,index) => (
                                 <Favorites
                                     clicked={ ()=> this.props.onRemoveFavorites(index)}
                                     showFavoriteWeather={ ()=> this.getFavoriteDetails(item.name)}
@@ -75,7 +76,7 @@ class Home extends Component{
                                     temp={item.temp}
                                 />
                             ))
-                          : null
+                            : null
                     }
                 </div>
             </div>
