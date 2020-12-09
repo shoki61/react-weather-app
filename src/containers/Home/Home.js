@@ -6,7 +6,8 @@ import './Home.css';
 import '../../mode-css/Mode.css';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Buttons/Button/Button';
-import * as action from '../../store/actions/index';
+import * as actions from '../../store/actions/index';
+import Favorites from '../../components/Favorites/Favorites';
 
 class Home extends Component{
 
@@ -35,6 +36,7 @@ class Home extends Component{
         this.setState({locationName: event.target.value});
     };
 
+
     render(){
         const modeImg = this.props.mode ? 'Light-Mode-BackImg' : 'Dark-Mode-BackImg';
         return(
@@ -56,16 +58,37 @@ class Home extends Component{
                             <BsSearch/>
                         </Button>
                     </div>
+                    {
+                        this.props.favorites.length > 0
+                          ? this.props.favorites.map((item,index) => (
+                                <Favorites
+                                    clicked={()=> this.props.onRemoveFavorites(index)}
+                                    showFavoriteWeather={()=>this.getFavoriteWeather(item.name)}
+                                    key={item.name}
+                                    name={item.name}
+                                    icon={item.icon}
+                                    temp={item.temp}
+                                />
+                            ))
+                          : null
+                    }
                 </div>
             </div>
         );
     };
 };
 
-const mapDispatchToProps = dispatch => {
-    return{
-        onSubmitLocation: location => dispatch(action.fetchWeather(location)),
+const mapStateToProps = state => {
+    return {
+        favorites: state.favLocations.favorites
     };
 };
 
-export default connect(null, mapDispatchToProps)(Home);
+const mapDispatchToProps = dispatch => {
+    return{
+        onSubmitLocation: location => dispatch(actions.fetchWeather(location)),
+        onRemoveFavorites: index => dispatch(actions.removeFavorites(index)),
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
