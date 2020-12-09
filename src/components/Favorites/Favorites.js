@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { IoMdRemoveCircleOutline } from 'react-icons/io';
 
 import './Favorites.css';

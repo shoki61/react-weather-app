@@ -18,12 +18,11 @@ class App extends Component{
 
     componentDidMount() {
         const locationName = localStorage.getItem('locationName');
-        if(locationName) this.props.onRefreshHandler(localStorage.getItem('locationName'));
+        if(locationName) this.props.onRefreshHandler(locationName);
         const favorites = localStorage.getItem('favorites');
         if(favorites){
             const favs = JSON.parse(favorites);
             for(let i=0; i < favs.length; i++){
-                console.log(favs[i])
                 this.props.onGetFavorites(favs[i]);
             };
         };

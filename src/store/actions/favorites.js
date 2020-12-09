@@ -37,13 +37,14 @@ export const fetchFavorite = (locationName) => {
                 const location = response.data.results[0].geometry.location;
                 axios.get(`/onecall?lat=${location.lat}&lon=${location.lng}&appid=${api}`)
                     .then(response => {
+                        const current = response.data.current
                         dispatch(addFavorites({
                             name: locationName,
-                            icon: response.data.current.weather[0].icon,
-                            temp: response.data.current.temp
+                            icon: current.weather[0].icon,
+                            temp: current.temp
                         }));
                     })
-                    .catch(error=> error);
+                    .catch(error => error);
             })
             .catch(err => err);
     };

@@ -1,6 +1,5 @@
-import React  from 'react';
+import React from 'react';
 import { FaRegStar, FaStar } from 'react-icons/fa'
-
 
 import './CurrentWeather.css';
 import Button from '../Buttons/Button/Button';
@@ -9,6 +8,7 @@ import Spinner from '../Spinner/Spinner';
 
 
 const currentWeather = props => {
+
     return (
         <div className='Current-Weather-Card'>
             {props.currentData
@@ -47,5 +47,6 @@ const currentWeather = props => {
         </div>
     )
 };
+
 
 export default currentWeather;
