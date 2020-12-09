@@ -27,3 +27,12 @@ img {
     margin:0;
     font-family: "Comic Sans MS", cursive, sans-serif;
 }
+
+@media (max-width: 500px) {
+    .Logo-Name{
+        font-size: 15px;
+    }
+    .App-Type{
+        font-size: 13px;
+    }
+}
