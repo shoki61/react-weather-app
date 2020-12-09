@@ -31,6 +31,11 @@ class Home extends Component{
         };
     };
 
+    getFavoriteDetails = name => {
+        this.props.onSubmitLocation(name);
+        this.props.history.push('/weather');
+    }
+
 
     inputChangedHandler = event => {
         this.setState({locationName: event.target.value});
@@ -62,8 +67,8 @@ class Home extends Component{
                         this.props.favorites.length > 0
                           ? this.props.favorites.map((item,index) => (
                                 <Favorites
-                                    clicked={()=> this.props.onRemoveFavorites(index)}
-                                    showFavoriteWeather={()=>this.getFavoriteWeather(item.name)}
+                                    clicked={ ()=> this.props.onRemoveFavorites(index)}
+                                    showFavoriteWeather={ ()=> this.getFavoriteDetails(item.name)}
                                     key={item.name}
                                     name={item.name}
                                     icon={item.icon}
