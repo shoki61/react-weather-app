@@ -23,21 +23,14 @@ class Weather extends Component{
 
 
     addFavoritesHandler = () => {
-        if(!changeFavStarHandler(this.props.favs,this.props.location)){
+        const favs = this.props.favorites.map(el => el.name)
+        if(!changeFavStarHandler(favs,this.props.location)){
            this.props.onAddFavorites({
                     name:this.props.location,
                     icon:this.props.current.weather[0].icon,
                     temp:this.props.current.temp
            });
         };
-    };
-
-    removeFavoritesHandler = (index) => {
-        this.props.onRemoveFavorites(index);
-    };
-
-    removeAllFavoritesHandler = () => {
-        this.props.onRemoveAllFavorites();
     };
 
     getWeatherHandler = () => {
@@ -58,7 +51,6 @@ class Weather extends Component{
 
     inputChangedHandler = event => this.setState({locationName: event.target.value});
 
-    errorConfirmedHandler = () => this.props.onErrorConfirmed()
 
     render(){
         const modeBackImg = this.props.mode ? 'Light-Mode-BackImg' : 'Dark-Mode-BackImg';
@@ -66,10 +58,10 @@ class Weather extends Component{
             <div className='Weather'>
                 {
                     this.props.error
-                        ? <Modal close={this.errorConfirmedHandler}>
+                        ? <Modal close={this.props.onErrorConfirmed}>
                             <ErrorIcon style={{fontSize:50, color:'#ff0000'}}/>
                             <p>Oops! Something went wrong...</p>
-                            <Button clicked={this.errorConfirmedHandler} btnType='Error'>
+                            <Button clicked={this.props.onErrorConfirmed} btnType='Error'>
                                 Try again!
                             </Button>
                           </Modal>
@@ -95,12 +87,11 @@ class Weather extends Component{
                         clicked={this.addFavoritesHandler}
                         currentData={this.props.current}
                         locationName={this.props.location}
-                        isFavorite={this.state.isFavorite}
                     />
                     { this.props.favorites.length ? <span>Favorite locations</span> : null }
                     {
                         this.props.favorites.length >= 2
-                            ? <Button clicked={this.removeAllFavoritesHandler} btnType='Remove-All'>
+                            ? <Button clicked={this.props.onRemoveAllFavorites} btnType='Remove-All'>
                                 Remove all
                               </Button>
                             : null
@@ -109,7 +100,7 @@ class Weather extends Component{
                         this.props.favorites.length > 0
                             ? this.props.favorites.map((item,index) => (
                                 <Favorites
-                                    clicked={()=> this.removeFavoritesHandler(index)}
+                                    clicked={()=> this.props.onRemoveFavorites(index)}
                                     showFavoriteWeather={()=>this.props.onSubmitLocation(item.name)}
                                     key={item.name}
                                     name={item.name}
@@ -139,7 +130,6 @@ const mapStateToProps = state => {
         weekly: state.weather.weeklyForecast,
         location: state.weather.location,
         favorites: state.favLocations.favorites,
-        favs:state.favLocations.favs,
         error: state.weather.error
     };
 };
