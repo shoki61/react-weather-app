@@ -19,7 +19,8 @@ import * as actions from '../../store/actions/index';
 class Weather extends Component{
 
     state = {
-        locationName: ''
+        locationName: '',
+        showBackToTopButton: false
     };
 
 
@@ -48,18 +49,20 @@ class Weather extends Component{
                 this.setState({locationName: ''})
             };
         };
-
     };
 
     inputChangedHandler = event => this.setState({locationName: event.target.value});
 
 
-    backToTop = () => window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
+    backToTop = () => window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
 
+    handleScroll = () => {
+        this.setState({ showBackToTopButton: window.scrollY > 600})
+    };
 
     render(){
+        window.addEventListener('scroll', this.handleScroll);
         const modeBackImg = this.props.mode ? 'Light-Mode-BackImg' : 'Dark-Mode-BackImg';
-
         return(
             <div className='Weather'>
                 {
@@ -123,9 +126,14 @@ class Weather extends Component{
                         weeklyData={this.props.weekly}
                         locationName={this.props.location}
                     />
-                        <Button btnType='Back-To-Top' clicked={this.backToTop}>
-                            <ExpandLessRoundedIcon/>
-                        </Button>
+
+                    {
+                        this.state.showBackToTopButton
+                            ?<Button btnType='Back-To-Top' clicked={this.backToTop}>
+                                <ExpandLessRoundedIcon/>
+                            </Button>
+                            : null
+                    }
 
                 </div>
 
