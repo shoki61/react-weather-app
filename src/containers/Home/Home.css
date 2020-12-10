@@ -28,6 +28,14 @@
     margin-bottom: 20px;
 }
 
+.Home-Back-Image{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: -100;
+    transition: all .3s ease-out;
+}
+
 @media (min-width: 600px) and (max-width: 1030px){
     .Home-Container{
         width: 60%;

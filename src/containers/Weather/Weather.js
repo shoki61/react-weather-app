@@ -28,9 +28,9 @@ class Weather extends Component{
         const favs = this.props.favorites.map(el => el.name)
         if(!changeFavStarHandler(favs,this.props.location)){
            this.props.onAddFavorites({
-                    name:this.props.location,
-                    icon:this.props.current.weather[0].icon,
-                    temp:this.props.current.temp
+               name:this.props.location,
+               icon:this.props.current.weather[0].icon,
+               temp:this.props.current.temp
            });
         };
     };
@@ -56,9 +56,7 @@ class Weather extends Component{
 
     backToTop = () => window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
 
-    handleScroll = () => {
-        this.setState({ showBackToTopButton: window.scrollY > 600})
-    };
+    handleScroll = () => this.setState({ showBackToTopButton: window.scrollY > 600});
 
     render(){
         window.addEventListener('scroll', this.handleScroll);
@@ -129,9 +127,9 @@ class Weather extends Component{
 
                     {
                         this.state.showBackToTopButton
-                            ?<Button btnType='Back-To-Top' clicked={this.backToTop}>
+                            ? <Button btnType='Back-To-Top' clicked={this.backToTop}>
                                 <ExpandLessRoundedIcon/>
-                            </Button>
+                             </Button>
                             : null
                     }
 
@@ -158,7 +156,7 @@ const mapDispatchToProps = dispatch => {
         onAddFavorites: (favorite) => dispatch(actions.addFavorites(favorite)),
         onRemoveFavorites: (index) => dispatch(actions.removeFavorites(index)),
         onRemoveAllFavorites: () => dispatch(actions.removeAllFavorites()),
-        onSubmitLocation: (location, favorites) => dispatch(actions.fetchWeather(location,favorites)),
+        onSubmitLocation: (location) => dispatch(actions.fetchWeather(location)),
         onErrorConfirmed: () => dispatch(actions.errorConfirmed())
     };
 };

@@ -36,7 +36,6 @@ class Home extends Component{
         this.props.history.push('/weather');
     }
 
-
     inputChangedHandler = event => {
         this.setState({locationName: event.target.value});
     };
@@ -46,7 +45,7 @@ class Home extends Component{
         const modeBackImg = this.props.mode ? 'Light-Mode-BackImg' : 'Dark-Mode-BackImg';
         return(
             <div className='Home'>
-                <div className={['Back-Image',modeBackImg].join(' ')}> </div>
+                <div className={['Home-Back-Image',modeBackImg].join(' ')}> </div>
                 <div style={this.props.favorites.length ? {paddingTop:100} : null} className='Home-Container'>
                     <h1 className='Title'>Weather is Life</h1>
                     <div className='Search-Input'>
