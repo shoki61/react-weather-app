@@ -18,16 +18,9 @@ import * as actions from '../../store/actions/index';
 class Weather extends Component{
 
     state = {
-        locationName: '',
-        isFavorite: false
+        locationName: ''
     };
 
-
-    componentDidMount() {
-        setTimeout(()=>{
-            this.setState({isFavorite:changeFavStarHandler(this.props.favs,this.props.location)})
-        },0)
-    }
 
     addFavoritesHandler = () => {
         if(!changeFavStarHandler(this.props.favs,this.props.location)){
@@ -37,32 +30,20 @@ class Weather extends Component{
                     temp:this.props.current.temp
            });
         };
-        setTimeout(()=>{
-            this.setState({isFavorite:changeFavStarHandler(this.props.favs,this.props.location)})
-        },0)
     };
 
     removeFavoritesHandler = (index) => {
         this.props.onRemoveFavorites(index);
-        setTimeout(()=>{
-            this.setState({isFavorite:changeFavStarHandler(this.props.favs,this.props.location)})
-        },0)
     };
 
     removeAllFavoritesHandler = () => {
         this.props.onRemoveAllFavorites();
-        this.setState({isFavorite: false});
     };
 
     getWeatherHandler = () => {
         if(this.state.locationName !== ''){
             this.props.onSubmitLocation(this.state.locationName);
-            setTimeout(()=>{
-                this.setState({
-                    locationName: '',
-                    isFavorite:changeFavStarHandler(this.props.favs,this.props.location)
-                })
-            },0)
+            this.setState({ locationName: ''})
         };
     };
 
@@ -70,28 +51,14 @@ class Weather extends Component{
         if( event.keyCode === 13 ){
             if(this.state.locationName !== ''){
                 this.props.onSubmitLocation(this.state.locationName);
-                setTimeout(()=>{
-                    this.setState({
-                        locationName: '',
-                        isFavorite: changeFavStarHandler(this.props.favs, this.props.location)
-                    });
-                },0);
+                this.setState({locationName: ''})
             };
         };
     };
 
-    getFavoriteWeather = name => {
-        this.props.onSubmitLocation(name)
-        setTimeout(()=>{
-            this.setState({isFavorite:changeFavStarHandler(this.props.favs,this.props.location)})
-        },0)
-    }
-
     inputChangedHandler = event => this.setState({locationName: event.target.value});
 
-    errorConfirmedHandler = () => {
-        this.props.onErrorConfirmed()
-    }
+    errorConfirmedHandler = () => this.props.onErrorConfirmed()
 
     render(){
         const modeBackImg = this.props.mode ? 'Light-Mode-BackImg' : 'Dark-Mode-BackImg';
@@ -143,7 +110,7 @@ class Weather extends Component{
                             ? this.props.favorites.map((item,index) => (
                                 <Favorites
                                     clicked={()=> this.removeFavoritesHandler(index)}
-                                    showFavoriteWeather={()=>this.getFavoriteWeather(item.name)}
+                                    showFavoriteWeather={()=>this.props.onSubmitLocation(item.name)}
                                     key={item.name}
                                     name={item.name}
                                     icon={item.icon}

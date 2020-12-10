@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaRegStar, FaStar } from 'react-icons/fa'
+import { connect } from 'react-redux';
 
 import './CurrentWeather.css';
 import Button from '../Buttons/Button/Button';
@@ -8,6 +9,11 @@ import Spinner from '../Spinner/Spinner';
 
 
 const currentWeather = props => {
+    let isFav = false;
+    if(props.favorites.length){
+        const favs = props.favorites.map(el => el.name);
+        isFav = favs.includes(props.locationName);
+    };
 
     return (
         <div className='Current-Weather-Card'>
@@ -36,7 +42,7 @@ const currentWeather = props => {
                     </div>
                     <Button clicked={props.clicked} btnType='Add'>
                         {
-                            props.isFavorite
+                            isFav
                                 ? <FaStar/>
                                 : <FaRegStar/>
                         }
@@ -48,5 +54,10 @@ const currentWeather = props => {
     )
 };
 
+const mapStateToProps = state => {
+    return {
+        favorites: state.favLocations.favorites
+    };
+};
 
-export default currentWeather;
+export default connect(mapStateToProps)(currentWeather);
