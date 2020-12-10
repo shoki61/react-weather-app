@@ -58,4 +58,14 @@
     color:#fff
 }
 
+.Back-To-Top{
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    color:#fff;
+    bottom:30px;
+    right:35px;
+    background-color: rgba(255, 0, 177, 0.7);
+    border-radius: 100px;
+}
 

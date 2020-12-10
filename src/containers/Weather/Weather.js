@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BsSearch } from "react-icons/bs";
 import ErrorIcon from "@material-ui/icons/ErrorOutline";
+import ExpandLessRoundedIcon from '@material-ui/icons/ExpandLessRounded';
 
 import './Weather.css';
 import '../../mode-css/Mode.css';
@@ -47,13 +48,18 @@ class Weather extends Component{
                 this.setState({locationName: ''})
             };
         };
+
     };
 
     inputChangedHandler = event => this.setState({locationName: event.target.value});
 
 
+    backToTop = () => window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
+
+
     render(){
         const modeBackImg = this.props.mode ? 'Light-Mode-BackImg' : 'Dark-Mode-BackImg';
+
         return(
             <div className='Weather'>
                 {
@@ -117,7 +123,12 @@ class Weather extends Component{
                         weeklyData={this.props.weekly}
                         locationName={this.props.location}
                     />
+                        <Button btnType='Back-To-Top' clicked={this.backToTop}>
+                            <ExpandLessRoundedIcon/>
+                        </Button>
+
                 </div>
+
             </div>
         );
     };
