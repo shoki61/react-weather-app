@@ -2,46 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af17a0c7-bb24-4527-9920-d5a2177ac798" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/axios-weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/axios-weather.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Buttons/Button/Button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buttons/Button/Button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Buttons/Button/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buttons/Button/Button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Buttons/SwitchButton/SwitchButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buttons/SwitchButton/SwitchButton.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Buttons/SwitchButton/SwitchButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buttons/SwitchButton/SwitchButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CurrentWeather/CurrentWeather.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrentWeather/CurrentWeather.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CurrentWeather/CurrentWeather.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrentWeather/CurrentWeather.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Favorites/Favorites.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Favorites/Favorites.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Favorites/Favorites.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Favorites/Favorites.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Forecast/Forecast.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forecast/Forecast.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Forecast/Forecast.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forecast/Forecast.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Forecast/ForecastCards/HourlyCard/HourlyCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forecast/ForecastCards/HourlyCard/HourlyCard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Forecast/ForecastCards/HourlyCard/HourlyCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forecast/ForecastCards/HourlyCard/HourlyCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Forecast/ForecastCards/WeeklyCard/WeeklyCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forecast/ForecastCards/WeeklyCard/WeeklyCard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Forecast/ForecastCards/WeeklyCard/WeeklyCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forecast/ForecastCards/WeeklyCard/WeeklyCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Input/Input.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/Input.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Input/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/Input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Logo/Logo.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Logo/Logo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Logo/Logo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Logo/Logo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Modal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Spinner/Spinner.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Spinner/Spinner.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Spinner/Spinner.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Spinner/Spinner.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TabNavigator/TabNavigator.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabNavigator/TabNavigator.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TabNavigator/TabNavigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TabNavigator/TabNavigator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Header/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Header/Header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Weather/Weather.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Weather/Weather.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/utility.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/utility.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mode-css/Mode.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/mode-css/Mode.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/actionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/favorites.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/favorites.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/weather.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/favorites.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/favorites.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/weather.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +13,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -60,6 +22,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1kbpAZ5vUPJs4CnPtlsP0egphqe" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -106,7 +69,8 @@
       <updated>1605979005012</updated>
       <workItem from="1605979008942" duration="9737000" />
       <workItem from="1606036477070" duration="112152000" />
-      <workItem from="1606502889659" duration="239290000" />
+      <workItem from="1606502889659" duration="241843000" />
+      <workItem from="1607870691962" duration="2146000" />
     </task>
     <servers />
   </component>
