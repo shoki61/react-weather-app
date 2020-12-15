@@ -1,12 +1,18 @@
 import React from 'react';
 
 import FavoriteItem from './FavoriteItem/FavoriteItem';
-import Backdrop from './Backdrop/Backdrop';
+import './SideDrawer.css';
 
-const sideDrawer = props => (
-    <div>
+const sideDrawer = props => {
+    let attachedClasses = ['SideDrawer', 'Close'];
+    if(props.show) attachedClasses = ['SideDrawer', 'Open']
+    return(
+        <div
+            className={attachedClasses.join(' ')}
+        >
 
-    </div>
-);
+        </div>
+    )
+};
 
 export default sideDrawer;

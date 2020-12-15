@@ -70,3 +70,15 @@
     border-radius: 100px;
 }
 
+.Menu{
+    background-color: transparent;
+    color:#fff;
+    font-size: 25px;
+}
+
+@media (min-width: 1030px) {
+    .Menu{
+        display: none;
+    }
+}
+

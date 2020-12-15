@@ -4,6 +4,14 @@
     <list default="true" id="af17a0c7-bb24-4527-9920-d5a2177ac798" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Buttons/Button/Button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buttons/Button/Button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SideDrawer/Backdrop/Backdrop.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Backdrop/Backdrop.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SideDrawer/Backdrop/Backdrop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Backdrop/Backdrop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SideDrawer/SideDrawer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SideDrawer/SideDrawer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SideDrawer/SideDrawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SideDrawer/SideDrawer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Header/Header.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,11 +50,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\react\react-weather-app\src\components" />
       <recent name="E:\react\react-weather-app" />
       <recent name="E:\react\react-weather-app\src" />
       <recent name="E:\react\react-weather-app\src\components\Forecast\ForecastCards" />
       <recent name="E:\react\react-weather-app\src\components\Buttons\Button" />
-      <recent name="E:\react\react-weather-app\src\components" />
     </key>
   </component>
   <component name="RunManager">
@@ -70,7 +78,7 @@
       <workItem from="1605979008942" duration="9737000" />
       <workItem from="1606036477070" duration="112152000" />
       <workItem from="1606502889659" duration="241843000" />
-      <workItem from="1607870691962" duration="2146000" />
+      <workItem from="1607870691962" duration="7128000" />
     </task>
     <servers />
   </component>

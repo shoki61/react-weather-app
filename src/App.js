@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import Home from './containers/Home/Home';
 import Header from './containers/Header/Header';
 import Weather from './containers/Weather/Weather';
+import SideDrawer from './components/SideDrawer/SideDrawer';
+import Backdrop from './components/Backdrop/Backdrop';
 import * as actions from './store/actions/index';
 import './App.css';
 
@@ -14,6 +16,7 @@ class App extends Component{
     state={
         checkedA: false,
         checkedB: false,
+        showSideDrawer: false
     };
 
     componentDidMount() {
@@ -30,10 +33,14 @@ class App extends Component{
 
     changeMode = (event) => this.setState({[event.target.name]: event.target.checked});
 
+    changeSideDrawerVisible = () => this.setState({showSideDrawer: !this.state.showSideDrawer});
+
     render(){
         return (
             <div className="App">
-                <Header value={this.state.checkedB} clicked={this.changeMode}/>
+                <Header sideDrawerHandler={this.changeSideDrawerVisible} value={this.state.checkedB} clicked={this.changeMode}/>
+                {this.state.showSideDrawer ? <Backdrop clicked={this.changeSideDrawerVisible} /> : null}
+                <SideDrawer show={this.state.showSideDrawer}/>
                 <Route path='/' exact render={props => <Home mode={this.state.checkedB} {...props}/>}/>
                 <Route path='/weather' render={props => <Weather mode={this.state.checkedB} {...props}/>}/>
             </div>

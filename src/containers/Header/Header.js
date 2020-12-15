@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { CgMenu } from 'react-icons/cg';
 
 import Logo from '../../components/Logo/Logo';
 import SwitchButton from "../../components/Buttons/SwitchButton/SwitchButton";
+import Button from '../../components/Buttons/Button/Button';
 import './Header.css';
 import '../../mode-css/Mode.css';
 
@@ -16,6 +18,9 @@ class Header extends Component{
                     <i className="fab fa-github"> </i>
                 </a>
                 <SwitchButton checked={this.props.value} clicked={this.props.clicked}/>
+                <Button clicked={this.props.sideDrawerHandler} btnType='Menu'>
+                    <CgMenu/>
+                </Button>
             </div>
         );
     };
