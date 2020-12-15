@@ -2,9 +2,3 @@
     color: #ff008c;
     font-weight: bold!important;
 }
-
-@media (max-width: 500px) {
-    .Label{
-        display: none;
-    }
-}

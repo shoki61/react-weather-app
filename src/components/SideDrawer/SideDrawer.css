@@ -7,6 +7,7 @@
     display: none;
     box-sizing: border-box;
     transition: all .3s ease-in;
+    padding-top: 20px;
 }
 
 .Open {
@@ -17,16 +18,33 @@
     transform: translateX(100%);
 }
 
+.Link-Mode-Container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 0 0 35px;
+    box-sizing: border-box;
+}
+
+.Link-Mode-Container a{
+    color: #585858;
+    padding: 0;
+}
+
+
+
 @media (max-width: 1024px) {
     .SideDrawer{
         display: block;
         width: 40%;
     }
 }
-
 @media (max-width: 500px) {
     .SideDrawer{
         display: block;
         width: 75%;
     }
 }
+
+
