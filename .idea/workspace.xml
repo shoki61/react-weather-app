@@ -4,7 +4,10 @@
     <list default="true" id="af17a0c7-bb24-4527-9920-d5a2177ac798" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CurrentWeather/CurrentWeather.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrentWeather/CurrentWeather.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CurrentWeather/CurrentWeather.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrentWeather/CurrentWeather.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SideDrawer/FavoriteItem/FavoriteItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SideDrawer/FavoriteItem/FavoriteItem.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SideDrawer/FavoriteItem/FavoriteItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SideDrawer/FavoriteItem/FavoriteItem.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +74,7 @@
       <workItem from="1605979008942" duration="9737000" />
       <workItem from="1606036477070" duration="112152000" />
       <workItem from="1606502889659" duration="241843000" />
-      <workItem from="1607870691962" duration="23416000" />
+      <workItem from="1607870691962" duration="25029000" />
     </task>
     <servers />
   </component>

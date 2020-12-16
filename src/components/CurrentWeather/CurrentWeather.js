@@ -18,7 +18,7 @@ const currentWeather = props => {
     return (
         <div className='Current-Weather-Card'>
             {props.currentData
-                ? <div>
+                ? <div className='Container'>
                     <p className='City-Name'>{props.locationName}</p>
                     <div className='Weather-Status'>
                         <div className='Time'>

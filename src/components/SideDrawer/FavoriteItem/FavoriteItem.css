@@ -15,8 +15,14 @@
 .Name{
     color: #6e6e6e;
     font-family: 'Tauri', sans-serif;
-    width: 100%;
-    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.Side-Drawer-Nav{
+    width: 50%;
+    display: flex;
 }
 
 .Location-Temp{
