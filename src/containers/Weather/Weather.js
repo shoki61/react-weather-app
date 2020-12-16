@@ -95,14 +95,16 @@ class Weather extends Component{
                         currentData={this.props.current}
                         locationName={this.props.location}
                     />
-                    { this.props.favorites.length ? <span>Favorite locations</span> : null }
-                    {
-                        this.props.favorites.length >= 2
-                            ? <Button clicked={this.props.onRemoveAllFavorites} btnType='Remove-All'>
-                                Remove all
-                              </Button>
-                            : null
-                    }
+                    <div className='Favorite-Remove-All-Container'>
+                        { this.props.favorites.length ? <span>Favorite locations</span> : null }
+                        {
+                            this.props.favorites.length >= 2
+                                ? <Button clicked={this.props.onRemoveAllFavorites} btnType='Remove-All'>
+                                    Remove all
+                                </Button>
+                                : null
+                        }
+                    </div>
                     {
                         this.props.favorites.length > 0
                             ? this.props.favorites.map((item,index) => (

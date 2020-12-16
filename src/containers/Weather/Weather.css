@@ -40,6 +40,13 @@
     letter-spacing: 1px;
 }
 
+.Favorite-Remove-All-Container{
+    align-items: center;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
 @media (min-width: 1030px){
     .Back-To-Top:hover{
         bottom:33px;
@@ -55,7 +62,9 @@
         width: 100%;
         align-items: center;
         padding: 100px 0 0 0;
-        overflow: visible;
+    }
+    .Favorite-Remove-All-Container{
+        display: none;
     }
     .Weather-Right-Layout{
         padding: 0;
