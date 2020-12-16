@@ -7,7 +7,6 @@ import { FaTemperatureHigh, FaTemperatureLow } from 'react-icons/fa';
 
 import './WeeklyCard.css';
 
-
 const styles = {
     fontSize:17,
     marginRight:7

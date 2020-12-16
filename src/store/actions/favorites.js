@@ -41,7 +41,7 @@ export const fetchFavorite = (locationName) => {
                         dispatch(addFavorites({
                             name: locationName,
                             icon: current.weather[0].icon,
-                            temp: current.temp
+                            temp: Math.round(current.temp - 273.15)
                         }));
                     })
                     .catch(error => error);

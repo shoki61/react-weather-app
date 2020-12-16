@@ -30,7 +30,7 @@ class Weather extends Component{
            this.props.onAddFavorites({
                name:this.props.location,
                icon:this.props.current.weather[0].icon,
-               temp:this.props.current.temp
+               temp:Math.round(this.props.current.temp - 273.15)
            });
         };
     };
