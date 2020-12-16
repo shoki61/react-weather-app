@@ -44,6 +44,7 @@ class App extends Component{
                 />
                 {this.state.showSideDrawer ? <Backdrop clicked={this.changeSideDrawerVisible} /> : null}
                 <SideDrawer
+                    close={this.changeSideDrawerVisible}
                     clicked={this.changeMode}
                     value={this.state.checkedB}
                     show={this.state.showSideDrawer}

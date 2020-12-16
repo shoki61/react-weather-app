@@ -12,6 +12,10 @@ const sideDrawer = props => {
     let modeBackground = props.value ? 'Light-Mode-Background': 'Dark-Mode-Background';
     let attachedClasses = ['SideDrawer',modeBackground, 'Close'];
     if(props.show) attachedClasses = ['SideDrawer',modeBackground, 'Open'];
+    const fetchFavoriteWeather = (name) => {
+        props.onSubmitLocation(name);
+        props.close();
+    };
     return(
         <div
             className={attachedClasses.join(' ')}
@@ -43,6 +47,7 @@ const sideDrawer = props => {
                             name={item.name}
                             temp={item.temp}
                             clicked={() => props.onRemoveFavorite(index)}
+                            showFavoriteWeather={() => fetchFavoriteWeather(item.name)}
                         />
                   ))
                 : <p className='No-Favorite-Message'>You don't have any favorite locations</p>
@@ -61,7 +66,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return{
         onRemoveAllFavorites:() => dispatch(actions.removeAllFavorites()),
-        onRemoveFavorite: index => dispatch(actions.removeFavorites(index))
+        onRemoveFavorite: index => dispatch(actions.removeFavorites(index)),
+        onSubmitLocation: location => dispatch(actions.fetchWeather(location))
     };
 };
 
