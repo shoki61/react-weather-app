@@ -14,10 +14,12 @@ class Header extends Component{
         return(
             <div className={['Header',modeBackground].join(' ')}>
                 <Logo mode={this.props.value} height='65px'/>
-                <a href='https://github.com/shoki61/react-weather-app' rel='noreferrer' target='_blank'>
+                <a className='Repository-Link' href='https://github.com/shoki61/react-weather-app' rel='noreferrer' target='_blank'>
                     <i className="fab fa-github"> </i>
                 </a>
-                <SwitchButton checked={this.props.value} clicked={this.props.clicked}/>
+                <div className='SwitchButton-Container'>
+                    <SwitchButton checked={this.props.value} clicked={this.props.clicked}/>
+                </div>
                 <Button clicked={this.props.sideDrawerHandler} btnType='Menu'>
                     <CgMenu/>
                 </Button>

@@ -25,9 +25,11 @@ i {
     font-size: 25px;
 }
 
-@media (max-width: 600px) {
-    .Header{
-        padding:0;
-        height: 50px;
+@media (max-width: 1030px) {
+    .Header {
+        padding:0 15px 0 0
+    }
+    .Repository-Link, .SwitchButton-Container{
+        display: none;
     }
 }
