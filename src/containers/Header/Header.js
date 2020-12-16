@@ -21,7 +21,7 @@ class Header extends Component{
                     <SwitchButton checked={this.props.value} clicked={this.props.clicked}/>
                 </div>
                 <Button clicked={this.props.sideDrawerHandler} btnType='Menu'>
-                    <CgMenu/>
+                    <CgMenu style={{color:this.props.value ? '#414141' : '#fff'}}/>
                 </Button>
             </div>
         );
