@@ -2,7 +2,6 @@
     width: 100%;
     height: 40px;
     box-sizing: border-box;
-    padding-right: 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -22,4 +21,5 @@
     font-family: 'Amaranth', sans-serif;
     color: #ff8217;
     font-size: 23px;
+    margin-right: 10px;
 }

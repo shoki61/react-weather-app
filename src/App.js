@@ -19,7 +19,7 @@ class App extends Component{
         showSideDrawer: false
     };
 
-    componentDidMount() {
+   /* componentDidMount() {
         const locationName = localStorage.getItem('locationName');
         if(locationName) this.props.onRefreshHandler(locationName);
         const favorites = localStorage.getItem('favorites');
@@ -28,8 +28,7 @@ class App extends Component{
             for(let i=0; i < favs.length; i++){
                 this.props.onGetFavorites(favs[i]);
             };
-        };
-    };
+        };*/
 
     changeMode = (event) => this.setState({[event.target.name]: event.target.checked});
 

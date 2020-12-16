@@ -30,11 +30,16 @@
     color:seashell;
     border-radius: 3px;
     transition: all .3s ease-in-out;
-    margin-bottom: 10px;
 }
 
 .Remove-All:hover{
     background-color: #ff2f2f;
+}
+
+.Side-Drawer-Remove{
+    background-color: transparent;
+    color: #ff2f2f;
+    font-size: 20px;
 }
 
 

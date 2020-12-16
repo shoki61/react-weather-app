@@ -38,6 +38,13 @@
     text-align: left;
 }
 
+.Remove-All-Container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px
+}
+
 @media (max-width: 1024px) {
     .SideDrawer{
         display: block;

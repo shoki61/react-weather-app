@@ -24,9 +24,9 @@ const sideDrawer = props => {
                     <SwitchButton checked={props.value} clicked={props.clicked}/>
                 </div>
             </div>
-            <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+            <div className='Remove-All-Container'>
                 <p>Favorite locations</p>
-                <Button clicked={props.onRemoveAllFavorites}>
+                <Button btnType='Remove-All' clicked={props.onRemoveAllFavorites}>
                     Remove all
                 </Button>
             </div>
@@ -36,6 +36,7 @@ const sideDrawer = props => {
                         key={item.name}
                         name={item.name}
                         temp={item.temp}
+                        clicked={() => props.onRemoveFavorite(index)}
                     />
                 ))
             }
@@ -52,7 +53,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return{
-        onRemoveAllFavorites:() => dispatch(actions.removeAllFavorites())
+        onRemoveAllFavorites:() => dispatch(actions.removeAllFavorites()),
+        onRemoveFavorite: index => dispatch(actions.removeFavorites(index))
     };
 };
 
