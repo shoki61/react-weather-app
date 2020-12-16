@@ -25,20 +25,27 @@ const sideDrawer = props => {
                 </div>
             </div>
             <div className='Remove-All-Container'>
-                <p>Favorite locations</p>
-                <Button btnType='Remove-All' clicked={props.onRemoveAllFavorites}>
-                    Remove all
-                </Button>
-            </div>
+                <p className='Favorites-Text'>Favorite locations</p>
+                {
+                    props.favorites.length > 1
+                    ? <Button btnType='Remove-All' clicked={props.onRemoveAllFavorites}>
+                            Remove all
+                      </Button>
+                    : null
+                }
+             </div>
+
             {
-                props.favorites.map((item,index)=>(
-                    <FavoriteItem
-                        key={item.name}
-                        name={item.name}
-                        temp={item.temp}
-                        clicked={() => props.onRemoveFavorite(index)}
-                    />
-                ))
+                props.favorites.length
+                ? props.favorites.map((item,index)=>(
+                        <FavoriteItem
+                            key={item.name}
+                            name={item.name}
+                            temp={item.temp}
+                            clicked={() => props.onRemoveFavorite(index)}
+                        />
+                  ))
+                : <p className='No-Favorite-Message'>You don't have any favorite locations</p>
             }
 
         </div>

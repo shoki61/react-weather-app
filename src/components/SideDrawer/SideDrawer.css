@@ -31,11 +31,10 @@
     padding: 0;
 }
 
-.SideDrawer p{
+.Favorites-Text{
     font-size: 13px;
     font-weight: 600;
     color: #e85e21;
-    text-align: left;
 }
 
 .Remove-All-Container{
@@ -43,6 +42,12 @@
     justify-content:space-between;
     align-items:center;
     margin-bottom:15px
+}
+
+.No-Favorite-Message{
+    color:grey;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 15px;
 }
 
 @media (max-width: 1024px) {
