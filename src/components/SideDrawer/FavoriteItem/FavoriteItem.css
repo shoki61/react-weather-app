@@ -1,0 +1,25 @@
+.Favorite-Item{
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    padding-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top:2px  solid #e9e9e9;
+}
+
+.Favorite-Item:last-child{
+    border-bottom: 2px solid #e9e9e9;
+}
+
+.Name{
+    color: #6e6e6e;
+    font-family: 'Tauri', sans-serif;
+}
+
+.Location-Temp{
+    font-family: 'Amaranth', sans-serif;
+    color: #ff8217;
+    font-size: 23px;
+}

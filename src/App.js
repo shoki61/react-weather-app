@@ -38,9 +38,17 @@ class App extends Component{
     render(){
         return (
             <div className="App">
-                <Header sideDrawerHandler={this.changeSideDrawerVisible} value={this.state.checkedB} clicked={this.changeMode}/>
+                <Header
+                    sideDrawerHandler={this.changeSideDrawerVisible}
+                    value={this.state.checkedB}
+                    clicked={this.changeMode}
+                />
                 {this.state.showSideDrawer ? <Backdrop clicked={this.changeSideDrawerVisible} /> : null}
-                <SideDrawer clicked={this.changeMode} value={this.state.checkedB} show={this.state.showSideDrawer}/>
+                <SideDrawer
+                    clicked={this.changeMode}
+                    value={this.state.checkedB}
+                    show={this.state.showSideDrawer}
+                />
                 <Route path='/' exact render={props => <Home mode={this.state.checkedB} {...props}/>}/>
                 <Route path='/weather' render={props => <Weather mode={this.state.checkedB} {...props}/>}/>
             </div>
@@ -56,4 +64,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

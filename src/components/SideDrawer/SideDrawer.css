@@ -1,13 +1,12 @@
 .SideDrawer{
     position: fixed;
     height: 100%;
-    background-color: seashell;
     z-index: 300;
     right: 0;
     display: none;
     box-sizing: border-box;
     transition: all .3s ease-in;
-    padding-top: 20px;
+    padding: 20px 20px 0 20px;
 }
 
 .Open {
@@ -23,8 +22,8 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 0 0 0 35px;
     box-sizing: border-box;
+    margin-bottom: 30px;
 }
 
 .Link-Mode-Container a{
@@ -32,7 +31,12 @@
     padding: 0;
 }
 
-
+.SideDrawer p{
+    font-size: 13px;
+    font-weight: 600;
+    color: #e85e21;
+    text-align: left;
+}
 
 @media (max-width: 1024px) {
     .SideDrawer{

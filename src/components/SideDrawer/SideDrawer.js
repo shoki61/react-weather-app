@@ -3,10 +3,12 @@ import React from 'react';
 import FavoriteItem from './FavoriteItem/FavoriteItem';
 import SwitchButton from '../Buttons/SwitchButton/SwitchButton';
 import './SideDrawer.css';
+import '../../mode-css/Mode.css';
 
 const sideDrawer = props => {
-    let attachedClasses = ['SideDrawer', 'Close'];
-    if(props.show) attachedClasses = ['SideDrawer', 'Open']
+    let modeBackground = props.value ? 'Light-Mode-Background': 'Dark-Mode-Background';
+    let attachedClasses = ['SideDrawer',modeBackground, 'Close'];
+    if(props.show) attachedClasses = ['SideDrawer',modeBackground, 'Open'];
     return(
         <div
             className={attachedClasses.join(' ')}
@@ -19,7 +21,12 @@ const sideDrawer = props => {
                     <SwitchButton checked={props.value} clicked={props.clicked}/>
                 </div>
             </div>
+            <p>Favorite locations</p>
             <FavoriteItem/>
+            <FavoriteItem/>
+            <FavoriteItem/>
+            <FavoriteItem/>
+
         </div>
     )
 };
