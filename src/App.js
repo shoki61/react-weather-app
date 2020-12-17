@@ -19,16 +19,17 @@ class App extends Component{
         showSideDrawer: false
     };
 
-   /* componentDidMount() {
+    componentDidMount() {
         const locationName = localStorage.getItem('locationName');
-        if(locationName) this.props.onRefreshHandler(locationName);
+        if (locationName) this.props.onRefreshHandler(locationName);
         const favorites = localStorage.getItem('favorites');
-        if(favorites){
+        if (favorites) {
             const favs = JSON.parse(favorites);
-            for(let i=0; i < favs.length; i++){
+            for (let i = 0; i < favs.length; i++) {
                 this.props.onGetFavorites(favs[i]);
             };
-        };*/
+        };
+    }
 
     changeMode = (event) => this.setState({[event.target.name]: event.target.checked});
 
